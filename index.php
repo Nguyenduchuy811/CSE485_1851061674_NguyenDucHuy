@@ -25,8 +25,8 @@
 					<div class="carousel-item active">
 						<img src="image/1.jpg" alt="First slide">
 						<div class="carousel-caption d-none d-md-block">
-							<h3>Title</h3>
-							<p>Description</p>
+							<h3>Test</h3>
+							<p>Test1</p>
 						</div>
 					</div>
 					<div class="carousel-item">
