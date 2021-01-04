@@ -1,0 +1,38 @@
+figure{overflow: hidden;display: block;width: 100%;}
+img{display: block;width: 100%; object-position: center; object-fit: cover;}
+body{font-family: 'Time New Rome'; letter-spacing: 1px;background-color: #cccccca6;}
+
+.cv_view{/* width: 100%; *//* margin:100px 0; */}
+.cv_main{/* box-shadow: -30px 30px 25px 25px #ccc; */}
+.left_info{background-color: #1c1616;}
+.left_info_nopad{margin:0 -15px;}
+.left_avatar{position: relative;}
+.left_avatar img{height: 800px;}
+figure{margin: 0;}
+figcaption{position: absolute;bottom: 0;left: 0;color: #fff;padding: 50px;background-color: #0000008c;padding-bottom: 0;}
+figcaption .header_intro{border-bottom: 10px solid orange;}
+figcaption .header_intro h3{text-align: center; padding-bottom: 10px;border-bottom: 2px solid orange; margin-bottom: 30px;text-transform: uppercase; letter-spacing: 2px;}
+figcaption .header_intro p{color: #ccc;text-align: justify;}
+.left_info_nopad .left_contact{color: #ccc;padding: 50px;position: absolute;bottom: 0;left: 0;}
+.left_contact h4{border-bottom: 2px solid orange; padding-bottom: 5px;margin-bottom: 10px;}
+.left_contact p{color: #ccc;}
+.item_contact{margin-top: 50px;}
+.icon_contact i{font-size: 35px;}
+
+
+.right_info{background-color: #ebe9e9;padding: 0 50px;padding-bottom: 50px;}
+.right_info .underlined{width: 250px;height: 2px; background-color: orange;margin: 0 auto;}
+.right_info .header_right_info{text-align: center;padding: 100px 0;}
+.header_right_info h1{text-transform: uppercase; letter-spacing: 5px; color: orange; font-weight: 200;}
+.header_right_info p{color: #ccc; font-size: 15px;;padding-bottom: 20px;position: relative;}
+.right_item{margin-bottom: 100px;}
+.right_item:last-child{margin-bottom: 0;}
+.hedaer_item_right{margin-bottom: 30px;}
+.hedaer_item_right h3{text-transform: uppercase;letter-spacing: 3px; padding-bottom: 20px; border-bottom: 2px solid orange;margin: 0%;font-weight: 400}
+.right_item p{color: #ccc;margin-bottom: 50px;}
+.right_item .main_info .item_list_info:last-child p{margin-bottom: 0;}
+.left_place{border-right: 2px solid orange;position: relative;}
+.left_place::after{content: '';position: absolute;top: 0px;right: -11px;width: 20px;height: 20px;border: 2px solid orange;border-radius: 100%;background-color: #ebe9e9;}
+.left_place b{word-spacing: 1px;}
+
+.modal_show_cv{max-width: 90%;}
