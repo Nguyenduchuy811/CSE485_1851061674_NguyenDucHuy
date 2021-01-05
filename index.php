@@ -54,54 +54,62 @@
 				</a>
 			</div>  
 		</div>
-		<div class="intro_index">
+		<div class="intro_index index_page">
 			<div class="container">
-				<div class="intro_index_title">
+				<div class="intro_index_title index_page_title">
 					<h2>Giới thiệu chung</h2>
 				</div>
-				<div class="intro_index_list">
+				<div class="intro_index_list index_page_list">
 					<div class="row">
-						<div class="intro_index_item col-md-4">	
+						<div class="intro_index_item col-md-4 index_page_item">	
 							về chúng tôi
 						</div>
-						<div class="intro_index_item col-md-4">	
+						<div class="intro_index_item col-md-4 index_page_item">	
 							về chúng tôi
 						</div>
-						<div class="intro_index_item col-md-4">	
+						<div class="intro_index_item col-md-4 index_page_item">	
 							về chúng tôi
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="info_group">
+		<div class="info_group index_page">
 			<div class="container">
-				<div class="header_info_group">
+				<div class="header_info_group index_page_title">
 					<h2>Nhóm gồm</h2>
 				</div>
-				<div class="info_group_main">
+				<div class="info_group_main index_page_list">
 					<div class="owl_cal_info_group owl-carousel owl-theme owl-loaded">
 						<div class="item">
 							<!-- Button trigger modal -->
 							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-							  Launch
+							  	<img src="image/8.jpg" alt="">
 							</button>
-							
-							
 						</div>
-						<div class="item">agsdjgnnagng</div>
-						<div class="item">gpppppppppppppp</div>
+						<div class="item">
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+							  	<img src="image/8.jpg" alt="">
+							</button>
+						</div>
+						<div class="item">
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+							  	<img src="image/8.jpg" alt="">
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="thank_you">
+		<div class="thank_you index_page">
 			<div class="container">
 				<div class="row">
-					<div class="thank_left col-md-6">
+					<div class="thank_left col-md-6 index_page_item">
 						cảm ơn 1
 					</div>
-					<div class="thank_right col-md-6">
+					<div class="thank_right col-md-6 index_page_item">
 						cảm ơn 2
 					</div>
 				</div>
