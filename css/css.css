@@ -1,7 +1,14 @@
 figure{overflow: hidden;display: block;width: 100%;}
 img{display: block;width: 100%; object-position: center; object-fit: cover;}
-body{font-family: 'Time New Rome'; letter-spacing: 1px;background-color: #cccccca6;}
+body{font-family: 'Time New Rome'; letter-spacing: 1px;}
 
+
+/*index page*/
+.banner_top img{height: 100vh;}
+.index_page .index_page_title h2{text-align: center; margin: 0}
+.index_page_item{text-align: center;}
+
+/*cv_main page */
 .cv_view{/* width: 100%; *//* margin:100px 0; */}
 .cv_main{/* box-shadow: -30px 30px 25px 25px #ccc; */}
 .left_info{background-color: #1c1616;}
