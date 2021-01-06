@@ -21,24 +21,11 @@ $(document).ready(function(){
         }
     })
 
-    $('.price_product_main').owlCarousel({
+    $('.owl_cal_info_group').owlCarousel({
         margin:30,
-        nav:true,
-        dots:false,
-        autoplay:false,
-        autoplayTimeout:8000,
-        autoplayHoverPause:false,
-        autoplaySpeed:1000,
-        navSpeed:1000,
-        navigation:true,
-        pagination:false,
-        loop:false,
         responsive:{
             0:{
-                items:1
-            },
-            1000:{
-                items:3
+                items: 2,
             }
         }
     })
