@@ -61,14 +61,24 @@
 				</div>
 				<div class="intro_index_list index_page_list">
 					<div class="row">
-						<div class="intro_index_item col-md-4 index_page_item">	
-							về chúng tôi
+						<div class="intro_index_item col-md-4">	
+							<div class="index_page_item">
+								<h3>Nhóm gồm</h3>
+								<p>agsga</p>
+								<p>ádgasdgasdgasg</p>
+							</div>
 						</div>
-						<div class="intro_index_item col-md-4 index_page_item">	
-							về chúng tôi
+						<div class="intro_index_item col-md-4">	
+							<div class="index_page_item">
+								<h3>Học vấn</h3>
+								<p>ágasg</p>
+							</div>
 						</div>
-						<div class="intro_index_item col-md-4 index_page_item">	
-							về chúng tôi
+						<div class="intro_index_item col-md-4">	
+							<div class="index_page_item">
+								<h3>Giáo viên</h3>
+								<p>ndgadgfgnagn</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -106,11 +116,39 @@
 		<div class="thank_you index_page">
 			<div class="container">
 				<div class="row">
-					<div class="thank_left col-md-6 index_page_item">
-						cảm ơn 1
+					<div class="thank_left col-md-12 index_page_title">
+						<h2>Lời cảm ơn</h2>
 					</div>
-					<div class="thank_right col-md-6 index_page_item">
-						cảm ơn 2
+					<div class="thank_left col-md-12 index_page_list index_page_item">
+						wagbaugaudsbgubgau guadfingaiugiuagnuiagnaiugsiug ag saiu g sduigha gasig hsaddphgai 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contact_index index_page">
+			<div class="container">
+				<div class="row">
+					<div class="contact_index col-md-12 index_page_title">
+						<h2>Liên hệ</h2>
+					</div>
+					<div class="contact_index col-md-12 index_page_list">
+						<div class="row">
+							<div class="contact_index_phone col-md-4 index_page_item">
+								<h3>Điện thoại</h3>
+								<p><strong>Số 1: </strong>0091892847129</p>
+								<p><strong>Số 2: </strong>0091892847129</p>
+							</div>
+							<div class="contact_index_phone col-md-4 index_page_item">
+								<h3>Email</h3>
+								<p><strong>Email 1: </strong>à@gmail.com</p>
+								<p><strong>Email 2: </strong>à@gmail.com</p>
+							</div>
+							<div class="contact_index_phone col-md-4 index_page_item">
+								<h3>Địa chỉ</h3>
+								<p><strong>Email 1: </strong>à@gmail.com</p>
+								<p><strong>Email 2: </strong>à@gmail.com</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

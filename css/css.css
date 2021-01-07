@@ -4,9 +4,18 @@ body{font-family: 'Time New Rome'; letter-spacing: 1px;}
 
 
 /*index page*/
+.navbar_header_index{position: absolute;top: 0;left: 0;width: 100%;z-index: 999;background-color: #0000008c !important;}
+.navbar_header_index .nav-link{color: #fff !important;}
+.navbar_brand_index{font-style: italic;color: #e2ae55 !important;font-size: 35px;letter-spacing: 10px;}
 .banner_top img{height: 100vh;}
-.index_page .index_page_title h2{text-align: center; margin: 0}
-.index_page_item{text-align: center;}
+.index_page{margin-top: 100px;}
+.index_page .index_page_title h2{text-align: center; margin: 0; color: #e2ae55;font-size: 45px;font-style: italic; font-weight: 100; margin-bottom: 50px;}
+.index_page_item{text-align: center;border: 1px solid #ccc; padding: 50px;box-shadow: 1px 1px 1px 1px #ccc; min-height: 300px;}
+.index_page .index_page_list .item button{padding: 0;transition: all 2s;overflow: hidden;border: none;}
+.index_page .index_page_list .item button img{transition: all 0.5s ease-in-out}
+.index_page .index_page_list .item button:hover img{transform: scale3d(1.1,1.1,1.1);}
+.index_page h3{font-style: italic;font-size: 1;}
+
 
 /*cv_main page */
 .cv_view{/* width: 100%; *//* margin:100px 0; */}
