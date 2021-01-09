@@ -56,3 +56,8 @@ figcaption .header_intro p{color: #ccc;text-align: justify;}
 .left_place b{word-spacing: 1px;}
 
 .modal_show_cv{max-width: 90%;}
+
+
+/* cv_login_view */
+.login_page_view{background-image: url('../image/115638.jpg');min-height: 100vh;object-fit: cover;object-position: center;}
+.login_input_view{}
