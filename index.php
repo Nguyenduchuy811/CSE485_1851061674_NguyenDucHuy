@@ -64,20 +64,25 @@
 						<div class="intro_index_item col-md-4">	
 							<div class="index_page_item">
 								<h3>Nhóm gồm</h3>
-								<p>agsga</p>
-								<p>ádgasdgasdgasg</p>
+								<p class="left">     1.Nguyễn Đức Huy<br>Mã sv:1851061674</p>
+								<p class="left">2.Lê Thị Hoa<br>Mã sv:1851061368</p>
 							</div>
 						</div>
 						<div class="intro_index_item col-md-4">	
 							<div class="index_page_item">
 								<h3>Học vấn</h3>
-								<p>ágasg</p>
+								<p>Sinh viên lớp: 60TH5</p>
+								<p>Chuyên ngành:Công nghệ thông tin</p>
+								<P>Trường: Đại học Thủy Lợi</P>
 							</div>
 						</div>
 						<div class="intro_index_item col-md-4">	
 							<div class="index_page_item">
 								<h3>Giáo viên</h3>
-								<p>ndgadgfgnagn</p>
+								<p>Kiều Tuấn Dũng</p>
+								<p>Dạy bộ môn: Công nghệ web</p>
+								<p>Email: dungkt@tlu.edu.vn</p>
+								<p>Làm việc tại </p>
 							</div>
 						</div>
 					</div>
@@ -94,19 +99,13 @@
 						<div class="item">
 							<!-- Button trigger modal -->
 							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-							  	<img src="image/8.jpg" alt="">
+							  	<img src="image/nguyenduchuy.jpg" alt="">
 							</button>
 						</div>
 						<div class="item">
 							<!-- Button trigger modal -->
 							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-							  	<img src="image/8.jpg" alt="">
-							</button>
-						</div>
-						<div class="item">
-							<!-- Button trigger modal -->
-							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-							  	<img src="image/8.jpg" alt="">
+							  	<img src="image/lethihoa.jpg" alt="">
 							</button>
 						</div>
 					</div>
@@ -120,7 +119,16 @@
 						<h2>Lời cảm ơn</h2>
 					</div>
 					<div class="thank_left col-md-12 index_page_list index_page_item">
-						wagbaugaudsbgubgau guadfingaiugiuagnuiagnaiugsiug ag saiu g sduigha gasig hsaddphgai 
+					Lời đầu tiên, chúng em xin trân trọng cảm ơn đến thầy Kiều Tuấn Dũng đã tận tình giúp đỡ chúng
+					 em trong suốt quá trình học tập cũng như việc hoàn thành bài tập lớn trong kì học vừa qua,
+					 đồng thời đã truyền đạt những kiến thức rất bổ ích để chúng em có được vốn kiến thức rất quan trọng 
+					 cho chuyên ngành về sau.
+					 Đặc biệt trong kì học này,nhà trường đã tổ chức cho chúng em được tiếp cận với môn học rất 
+					 hữu ích đối với chúng em cũng như tất cả sinh viên ngành Công nghệ thông tin nói chung.
+					Đó là môn “công nghệ web’, cùng với đề tài “làm website thiết kế CV’.Do còn giới hạn về mặt thời gian 
+					cũng như kiến thức, chúng em còn nhiều thiếu sót và hạn chế, kính mong sự chỉ dẫn và góp ý 
+					của thầy để bài tập lớn của chúng em được hoàn thiện hơn.Chúng em xin chân thành cảm ơn!
+ 
 					</div>
 				</div>
 			</div>
@@ -135,18 +143,18 @@
 						<div class="row">
 							<div class="contact_index_phone col-md-4 index_page_item">
 								<h3>Điện thoại</h3>
-								<p><strong>Số 1: </strong>0091892847129</p>
-								<p><strong>Số 2: </strong>0091892847129</p>
+								<p><strong>Số 1: </strong>0964837791</p>
+								<p><strong>Số 2: </strong>0977626821</p>
 							</div>
 							<div class="contact_index_phone col-md-4 index_page_item">
 								<h3>Email</h3>
-								<p><strong>Email 1: </strong>à@gmail.com</p>
-								<p><strong>Email 2: </strong>à@gmail.com</p>
+								<p><strong>Email 1: </strong>nguyenduchuy@gmail.com</p>
+								<p><strong>Email 2: </strong>lethihoa181299@gmail.com</p>
 							</div>
 							<div class="contact_index_phone col-md-4 index_page_item">
 								<h3>Địa chỉ</h3>
-								<p><strong>Email 1: </strong>à@gmail.com</p>
-								<p><strong>Email 2: </strong>à@gmail.com</p>
+								<p><strong>Address 1: </strong>Số nhà 5-Quang Trung-Hà Đông-Hà Nội</p>
+								<p><strong>Address 2: </strong>175-Tây Sơn-Đống Đa-Hà Nội</p>
 							</div>
 						</div>
 					</div>
