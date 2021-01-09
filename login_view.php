@@ -5,12 +5,12 @@
         echo "<script type='text/javascript'>alert('$alert');</script>";
     }
     session_destroy();
-    require 'header_view.php';
+    require 'header_personal_view.php';
 ?>
-	  <section>
+	  <section class="login_page_view">
 	  	<div class="container">
 			<div class="row">
-				<div class="form-input">
+				<div class="login_input_view form-input col-md-12">
 					<form action="http://localhost:8080/login.php" method="post">
 						<div class="form-group">
 						<label for="email">Email</label>
@@ -20,6 +20,7 @@
 						<label for="pass">Password</label>
 						<input type="password" class="form-control" name="pass" id="pass" aria-describedby="helpId" placeholder="Địa Password" required>
                         </div>
+						<a href="/" class="btn btn-primary active" role="button">Trang chủ</a>
 						<button type="submit" class="btn btn-primary">Đăng nhập</button>
 					</form>
                 </div>
