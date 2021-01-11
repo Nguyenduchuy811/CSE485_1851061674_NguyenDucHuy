@@ -1,4 +1,9 @@
 
+      <footer class="text-center">
+        
+		</footer>
+	  </div>
+	</main>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<link rel="stylesheet" href="/css/newcss.css">

@@ -16,7 +16,7 @@
   </head>
   <body>
   
-<body>
+<body class="login_page_view admin_page_view">
 <div class="page-wrapper chiller-theme toggled">
   <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
     <i class="fas fa-bars"></i>
@@ -218,4 +218,7 @@
   </nav>
             
 	  	
-	  <!-- </header> -->
+    <!-- </header> -->
+    <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="container-fluid">
