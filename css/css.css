@@ -59,5 +59,7 @@ figcaption .header_intro p{color: #ccc;text-align: justify;}
 
 
 /* cv_login_view */
-.login_page_view{background-image: url('../image/115638.jpg');min-height: 100vh;object-fit: cover;object-position: center;}
+.login_page_view,.admin_page_view{background-image: url('../image/115638.jpg');min-height: 100vh;object-fit: cover;object-position: center;position: relative;}
+.login_page_view::before{content: "";position: absolute;width: 100%;height: 100%;top: 0;left: 0;background-color: #ffffff61;}
+.admin_page_view::before{content: "";position: absolute;width: 100%;height: 100%;top: 0;z-index: -1;left: 0;background-color: #ffffff61;}
 .login_input_view{}

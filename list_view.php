@@ -14,16 +14,9 @@
 
 	require 'header_admin_view.php';
 ?>
-
-
-  <!-- sidebar-wrapper  -->
-  <main class="page-content">
-    <div class="container-fluid">
       <section>
 	  	agfadfgdgad
 	  </section>
-      <footer class="text-center">
-        
-      </footer>
-    </div>
-  </main>
+<?php
+	require_once 'footer_admin.php';
+?>
