@@ -15,7 +15,7 @@
 	require 'header_admin_view.php';
 ?>
       <section>
-	  	agfadfgdgad
+	  	show bang list
 	  </section>
 <?php
 	require_once 'footer_admin.php';
