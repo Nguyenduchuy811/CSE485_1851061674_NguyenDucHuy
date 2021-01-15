@@ -7,6 +7,7 @@
         <thead class="thead-inverse">
         <tr>
             <th>Stt</th>
+            <th>Image</th>
             <th>Id</th>
             <th>User_id</th>
             <th>Fisrt_name</th>
@@ -16,7 +17,6 @@
             <th>Phone</th>
             <th>Address</th>
             <th>Note</th>
-            <th>Image</th>
             <th>Manipulation</th>
         </tr>
         </thead>
@@ -28,7 +28,8 @@
             ?>
         <tr>
             <td scope="row"><?php echo $key+1;?></td>
-            <td><?php echo $value["id"];?></td>
+            <td><?php echo $value["id"];?></td>            
+            <td><img src="../image/<?php echo $value["image"];?>" alt="<?php echo $value["last_name"];?>"></td>
             <td><?php echo $value["user_id"];?></td>
             <td><?php echo $value["first_name"];?></td>
             <td><?php echo $value["last_name"];?></td>
@@ -41,7 +42,6 @@
             <td><?php echo $value["phone"];?></td>
             <td><?php echo $value["address"];?></td>
             <td><?php echo $value["note"];?></td>
-            <td><?php echo $value["image"];?></td>
             <td class="icon_admin">
                 <a href="<?php echo URL::to('/'); ?>/edit_user?id=<?php echo $value['id'];?>" class="fas fa-user-edit"></a>
                 <a href="<?php echo URL::to('/'); ?>/delete_user?id=<?php echo $value['id'] ?>" class="fas fa-trash-alt"
