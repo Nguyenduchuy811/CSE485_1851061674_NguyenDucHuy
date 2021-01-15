@@ -1,8 +1,0 @@
-table{display: table !important;}
-ul{padding: 0;list-style-type: none;display: inline-block;width: 100%;}
-li{float: left; margin-right: 5px;}
-table li:first-child a{background-color: yellow;}
-table li a{padding: 5px;background-color: red;}
-
-.login_nav{display: inline-block; text-align: right;}
-.login_nav li{float: right !important;}
