@@ -73,3 +73,4 @@ figcaption .header_intro p{color: #ccc;text-align: justify;}
 .table{background-color: #fdfbffbf;}
 /* .icon_admin a{font-size: 16px; width: 30px; height: 30px; margin-right: 10px; background-color: red; color: #fff;} */
 .login_page_view table img{width: 150px;height: 150px;}
+.input_form img{width: 150px; height: 150px;display: block;}

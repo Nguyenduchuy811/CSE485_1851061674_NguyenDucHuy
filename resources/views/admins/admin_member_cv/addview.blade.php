@@ -1,4 +1,4 @@
-<section>
+<section class="input_form">
     <form action="<?php echo URL::to('/add_user_action'); ?>" method="post">
         @csrf
         <div class="form-group">
@@ -36,6 +36,11 @@
             class="form-control" name="phone" id="phone" aria-describedby="helpId" placeholder="0123456789" required>
         </div>
         <div class="form-group">
+          <label for="note">Note</label>
+          <input type="text"
+            class="form-control" name="note" id="note" aria-describedby="helpId" placeholder="abcd" required>
+        </div>
+        <div class="form-group">
           <label for="address">Address</label>
           <input type="text"
             class="form-control" name="address" id="address" aria-describedby="helpId" placeholder="Address" required>
@@ -50,6 +55,14 @@
           <input type="password"
             class="form-control" name="cpass" id="cpass" aria-describedby="helpId" placeholder="******" required>
         </div>
+        <div class="form-group">
+          <label class="custom-file">
+            <input type="file" name="image" id="image" placeholder="chose" class="custom-file-input" aria-describedby="fileHelpId">
+            <span class="custom-file-control"><img src="../image/no_image.gif" alt=""></span>
+          </label>
+          <small id="fileHelpId" class="form-text text-muted">Help text</small>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </section>
