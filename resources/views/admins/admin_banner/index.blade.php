@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-    <h1 class="text-center">List user</h1>  
+    <h1 class="text-center">List banner</h1>  
     <table class="table table-striped table-inverse table-responsive">
         <thead class="thead-inverse">
         <tr>

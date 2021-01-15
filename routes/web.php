@@ -46,12 +46,30 @@ Route::get('/add_member_cv', [Admin_membercvController::class, 'addView']);
 
 Route::get('/list_education', [Admin_educationController::class, 'index']);
 Route::get('/add_education', [Admin_educationController::class, 'addView']);
+Route::post('/add_education_action', [Admin_educationController::class, 'addAction']);
+Route::get('/delete_education', [Admin_educationController::class, 'deleteAction']);
+Route::get('/edit_education', [Admin_educationController::class, 'editView']);
+Route::get('/info_education', [Admin_educationController::class, 'infoView']);
+
 
 Route::get('/list_experience', [Admin_experienceController::class, 'index']);
 Route::get('/add_experience', [Admin_experienceController::class, 'addView']);
+Route::post('/add_experience_action', [Admin_experienceController::class, 'addAction']);
+Route::get('/delete_experience', [Admin_experienceController::class, 'deleteAction']);
+Route::get('/edit_experience', [Admin_experienceController::class, 'editView']);
+Route::get('/info_experience', [Admin_experienceController::class, 'infoView']);
 
 Route::get('/list_thank_letter', [Admin_thank_letterController::class, 'index']);
 Route::get('/add_thank_letter', [Admin_thank_letterController::class, 'addView']);
+Route::post('/add_thank_letter_action', [Admin_thank_letterController::class, 'addAction']);
+Route::get('/delete_thank_letter', [Admin_thank_letterController::class, 'deleteAction']);
+Route::get('/edit_thank_letter', [Admin_thank_letterController::class, 'editView']);
+Route::get('/info_thank_letter', [Admin_thank_letterController::class, 'infoView']);
 
 Route::get('/list_banner', [Admin_bannerController::class, 'index']);
 Route::get('/add_banner', [Admin_bannerController::class, 'addView']);
+Route::post('/add_banner_action', [Admin_bannerController::class, 'addAction']);
+Route::get('/delete_banner', [Admin_bannerController::class, 'deleteAction']);
+Route::get('/edit_banner', [Admin_bannerController::class, 'editView']);
+Route::get('/info_banner', [Admin_bannerController::class, 'infoView']);
+
