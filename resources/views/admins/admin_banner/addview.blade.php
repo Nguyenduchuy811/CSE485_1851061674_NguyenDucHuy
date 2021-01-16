@@ -1,4 +1,5 @@
 <section class="input_form member_page">
+    <h1 class="text-center">Add banner</h1>  
     <form action="<?php echo URL::to('/add_banner_action'); ?>" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group avatar_member">

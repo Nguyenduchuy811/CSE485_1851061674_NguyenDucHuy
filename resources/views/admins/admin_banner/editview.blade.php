@@ -1,4 +1,5 @@
-<section>
+<section class="input_form">
+<h1 class="text-center">Edit banner</h1>  
     <form action="<?php echo URL::to('/add_user_action'); ?>" method="post">
         @csrf
         <div class="form-group">
