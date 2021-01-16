@@ -1,4 +1,5 @@
 <section>
+   <h1 class="text-center">Edit user</h1>  
     <form action="<?php echo URL::to('/edit_user_action'); ?>" method="post">
         @csrf
         

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+<section>
+     <h1 class="text-center">Informatin member cv</h1>  
+=======
 <section class="input_form">
+>>>>>>> 55441190b0700b84d1efc7933b7e88fff1dcec2b
     <form>
         @csrf
         <div class="form-group">
