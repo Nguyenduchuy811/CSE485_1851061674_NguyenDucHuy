@@ -84,14 +84,7 @@ class Admin_thank_letterController extends Controller
     public function editAction(Request $request){
         $store = new thank_letter;
         $arrdata = [
-            'username'=>$request->username,
-            'password'=>$request->pass,
-            'firstname'=>$request->firstname,
-            'lastname'=>$request->lastname,
-            'gender'=>$request->gender,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'address'=>$request->address
+            'content'=>$request->content
         ];
         // dd($store);die();
         $store->where('id',$request->id)->update($arrdata);

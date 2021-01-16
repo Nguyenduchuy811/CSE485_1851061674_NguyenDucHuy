@@ -126,20 +126,26 @@
 					</div>
 					<div class="contact_index col-md-12 index_page_list">
 						<div class="row">
-							<div class="contact_index_phone col-md-4 index_page_item">
-								<h3>Điện thoại</h3>
-								<p><strong>Số 1: </strong>0964837791</p>
-								<p><strong>Số 2: </strong>0977626821</p>
+							<div class="contact_index_phone col-md-4">
+								<div class="index_page_item">
+									<h3>Điện thoại</h3>
+									<p><strong>Số 1: </strong>0964837791</p>
+									<p><strong>Số 2: </strong>0977626821</p>
+								</div>
 							</div>
-							<div class="contact_index_phone col-md-4 index_page_item">
-								<h3>Email</h3>
-								<p><strong>Email 1: </strong>nguyenduchuy@gmail.com</p>
-								<p><strong>Email 2: </strong>lethihoa181299@gmail.com</p>
+							<div class="contact_index_phone col-md-4">
+								<div class="index_page_item">
+									<h3>Email</h3>
+									<p><strong>Email 1: </strong>nguyenduchuy@gmail.com</p>
+									<p><strong>Email 2: </strong>lethihoa181299@gmail.com</p>
+  								</div>
 							</div>
-							<div class="contact_index_phone col-md-4 index_page_item">
-								<h3>Địa chỉ</h3>
-								<p><strong>Address 1: </strong>Số nhà 5-Quang Trung-Hà Đông-Hà Nội</p>
-								<p><strong>Address 2: </strong>175-Tây Sơn-Đống Đa-Hà Nội</p>
+							<div class="contact_index_phone col-md-4">
+								<div class="index_page_item">
+									<h3>Địa chỉ</h3>
+									<p><strong>Address 1: </strong>Số nhà 5-Quang Trung-Hà Đông-Hà Nội</p>
+									<p><strong>Address 2: </strong>175-Tây Sơn-Đống Đa-Hà Nội</p>
+  								</div>
 							</div>
 						</div>
 					</div>

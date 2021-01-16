@@ -72,6 +72,7 @@ Route::get('/add_thank_letter', [Admin_thank_letterController::class, 'addView']
 Route::post('/add_thank_letter_action', [Admin_thank_letterController::class, 'addAction']);
 Route::get('/delete_thank_letter', [Admin_thank_letterController::class, 'deleteAction']);
 Route::get('/edit_thank_letter', [Admin_thank_letterController::class, 'editView']);
+Route::post('/edit_thank_letter_action', [Admin_thank_letterController::class, 'editAction']);
 Route::get('/info_thank_letter', [Admin_thank_letterController::class, 'infoView']);
 
 Route::get('/list_banner', [Admin_bannerController::class, 'index']);

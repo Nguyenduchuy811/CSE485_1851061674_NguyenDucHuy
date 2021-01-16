@@ -25,7 +25,7 @@
                 <a href="<?php echo URL::to('/'); ?>/edit_banner?id=<?php echo $value['id'];?>" class="fas fa-user-edit"></a>
                 <a href="<?php echo URL::to('/'); ?>/delete_banner?id=<?php echo $value['id'] ?>" class="fas fa-trash-alt"
                 onclick="return confirm('Are you sure want to delete?')"></a>
-                <a href="<?php echo URL::to('/'); ?>/info_user?id=<?php echo $value["id"];?>" class="far fa-question-circle"></a>
+                <a href="<?php echo URL::to('/'); ?>/info_banner?id=<?php echo $value["id"];?>" class="far fa-question-circle"></a>
             </td>
         </tr>
         <?php

@@ -81,7 +81,7 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a>
               <i class="fa fa-shopping-cart"></i>
               <span>User</span>
               <span class="badge badge-pill badge-danger">3</span>
@@ -98,7 +98,7 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a>
               <i class="far fa-gem"></i>
               <span>MemberCv</span>
             </a>
@@ -114,7 +114,7 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a>
               <i class="fa fa-chart-line"></i>
               <span>Profile_group</span>
             </a>
@@ -136,7 +136,7 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a>
               <i class="fa fa-globe"></i>
               <span>Thank letter</span>
             </a>
@@ -152,7 +152,7 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a>
               <i class="fa fa-globe"></i>
               <span>Banner</span>
             </a>
