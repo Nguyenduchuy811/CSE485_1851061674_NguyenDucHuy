@@ -39,6 +39,7 @@ Route::get('/add_user', [Admin_userController::class, 'addView']);
 Route::post('/add_user_action', [Admin_userController::class, 'addAction']);
 Route::get('/delete_user', [Admin_userController::class, 'deleteAction']);
 Route::get('/edit_user', [Admin_userController::class, 'editView']);
+Route::post('/edit_user_action', [Admin_userController::class, 'editAction']);
 Route::get('/info_user', [Admin_userController::class, 'infoView']);
 
 Route::get('/list_member_cv', [Admin_membercvController::class, 'index']);

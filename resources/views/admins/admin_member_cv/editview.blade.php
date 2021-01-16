@@ -1,6 +1,9 @@
+
 <section>
-    <form action="<?php echo URL::to('/add_user_action'); ?>" method="post">
+    <form action="<?php echo URL::to('/edit_member_cv_action'); ?>" method="post">
         @csrf
+        <input type="hidden"
+            name="id" id="id" aria-describedby="helpId" placeholder="John" value="<?php echo $user[0]['id']?>">
         <div class="form-group">
           <label for="username">User Name</label>
           <input type="text"
