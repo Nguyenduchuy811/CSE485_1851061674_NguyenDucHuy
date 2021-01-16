@@ -47,6 +47,7 @@ Route::get('/add_member_cv', [Admin_membercvController::class, 'addView']);
 Route::post('/add_member_cv_action', [Admin_membercvController::class, 'addAction']);
 Route::get('/delete_member_cv', [Admin_membercvController::class, 'deleteAction']);
 Route::get('/edit_member_cv', [Admin_membercvController::class, 'editView']);
+Route::post('/edit_member_cv_action', [Admin_membercvController::class, 'editAction']);
 Route::get('/info_member_cv', [Admin_membercvController::class, 'infoView']);
 
 Route::get('/list_education', [Admin_educationController::class, 'index']);
