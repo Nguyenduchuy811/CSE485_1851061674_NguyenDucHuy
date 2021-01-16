@@ -19,7 +19,8 @@
         <tr>
             <td scope="row"><?php echo $key+1;?></td>
             <td><?php echo $value["id"];?></td>
-            <td><?php echo $value["image"];?></td>
+            <td><img src="../image/<?php echo $value["image"];?>" alt=""></td>
+
             <td class="icon_admin">
                 <a href="<?php echo URL::to('/'); ?>/edit_banner?id=<?php echo $value['id'];?>" class="fas fa-user-edit"></a>
                 <a href="<?php echo URL::to('/'); ?>/delete_banner?id=<?php echo $value['id'] ?>" class="fas fa-trash-alt"
