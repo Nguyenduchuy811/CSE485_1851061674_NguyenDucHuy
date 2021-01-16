@@ -38,14 +38,7 @@ class Admin_thank_letterController extends Controller
 
     public function addAction(Request $request){
         $store = new thank_letter;
-        $store->username = $request->username;
-        $store->password = $request->pass;
-        $store->firstname = $request->firstname;
-        $store->lastname = $request->lastname;
-        $store->gender = $request->gender;
-        $store->email = $request->email;
-        $store->phone = $request->phone;
-        $store->address = $request->address;
+        $store->content = $request->content;
         // dd($request->pass);
         $store->save();
         return Redirect::to('/list_thank_letter');       
@@ -74,31 +67,22 @@ class Admin_thank_letterController extends Controller
     }
 
     public function editView(){
-        $store = new users;
+        $store = new thank_letter;
         $getdata = $store->where('id',$_GET['id'])->get();
-        $user = json_decode(json_encode($getdata), true);
+        $thank_letter = json_decode(json_encode($getdata), true);
         // var_dump($users);die();
         $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
             echo view('templates/header_admin_view');
-            echo view('admins/admin_user/editview')->with('user', $user);
+            echo view('admins/admin_thank_letter/editview')->with('thank_letter', $thank_letter);
             echo view('templates/footer_admin_view');
         }
     }
 
     public function editAction(Request $request){
-        $store = new users;
-        // $store->find($request->id);
-        // $store->username = $request->username;
-        // $store->password = $request->pass;
-        // $store->firstname = $request->firstname;
-        // $store->lastname = $request->lastname;
-        // $store->gender = $request->gender;
-        // $store->email = $request->email;
-        // $store->phone = $request->phone;
-        // $store->address = $request->address;
+        $store = new thank_letter;
         $arrdata = [
             'username'=>$request->username,
             'password'=>$request->pass,
@@ -111,6 +95,6 @@ class Admin_thank_letterController extends Controller
         ];
         // dd($store);die();
         $store->where('id',$request->id)->update($arrdata);
-        return Redirect::to('/list_user');       
+        return Redirect::to('/list_thank_letter');       
     }   
 }

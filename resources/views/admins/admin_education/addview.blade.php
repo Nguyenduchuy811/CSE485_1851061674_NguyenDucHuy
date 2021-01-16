@@ -1,6 +1,6 @@
 <section>
 <h1 class="text-center">Add education</h1>  
-    <form action="<?php echo URL::to('/add_user_action'); ?>" method="post">
+    <form action="<?php echo URL::to('/add_education_action'); ?>" method="post">
         @csrf
         <div class="form-group">
           <label for="username">Member_cv_id</label>
@@ -19,8 +19,7 @@
         </div>
         <div class="form-group">
           <label for="lastname">Content</label>
-          <input type="text"
-            class="form-control" name="content" id="content" aria-describedby="helpId" placeholder="trường đại học Thủy Lợi" required>
+          <textarea class="form-control" name="content" id="content" rows="10" placeholder="trường đại học Thủy Lợi"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

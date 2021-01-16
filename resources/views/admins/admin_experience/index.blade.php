@@ -25,7 +25,7 @@
             <td><?php echo $value["year_end"];?></td>
             <td><?php echo $value["content"];?></td>
             <td class="icon_admin">
-            <a href="<?php echo URL::to('/'); ?>/edit_banner?id=<?php echo $value['id'];?>" class="fas fa-user-edit"></a> 
+            <a href="<?php echo URL::to('/'); ?>/edit_experience?id=<?php echo $value['id'];?>" class="fas fa-user-edit"></a> 
                 <a href="<?php echo URL::to('/'); ?>/delete_experience?id=<?php echo $value['id'] ?>" class="fas fa-trash-alt"
                 onclick="return confirm('Are you sure want to delete?')"></a>
                 <a href="<?php echo URL::to('/'); ?>/info_experience?id=<?php echo $value["id"];?>" class="far fa-question-circle"></a>

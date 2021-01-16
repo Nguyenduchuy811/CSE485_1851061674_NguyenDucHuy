@@ -55,6 +55,7 @@ Route::get('/add_education', [Admin_educationController::class, 'addView']);
 Route::post('/add_education_action', [Admin_educationController::class, 'addAction']);
 Route::get('/delete_education', [Admin_educationController::class, 'deleteAction']);
 Route::get('/edit_education', [Admin_educationController::class, 'editView']);
+Route::post('/edit_education_action', [Admin_educationController::class, 'editAction']);
 Route::get('/info_education', [Admin_educationController::class, 'infoView']);
 
 
@@ -63,6 +64,7 @@ Route::get('/add_experience', [Admin_experienceController::class, 'addView']);
 Route::post('/add_experience_action', [Admin_experienceController::class, 'addAction']);
 Route::get('/delete_experience', [Admin_experienceController::class, 'deleteAction']);
 Route::get('/edit_experience', [Admin_experienceController::class, 'editView']);
+Route::post('/edit_experience_action', [Admin_experienceController::class, 'editAction']);
 Route::get('/info_experience', [Admin_experienceController::class, 'infoView']);
 
 Route::get('/list_thank_letter', [Admin_thank_letterController::class, 'index']);

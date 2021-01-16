@@ -3,48 +3,23 @@
     <form>
         @csrf
         <div class="form-group">
-          <label for="username">User Name</label>
+          <label for="username">Member_cv_id</label>
           <input type="text"
-            class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="John" value="<?php echo $user[0]['username']?> " disabled>
+            class="form-control" name="member_cv_id" id="member_cv_id" aria-describedby="helpId" placeholder="1" value="<?php echo $education[0]['member_cv_id'] ?>" disabled>
         </div>
         <div class="form-group">
-          <label for="firstname">First Name</label>
-          <input type="text"
-            class="form-control" name="firstname" id="firstname" aria-describedby="helpId" placeholder="Nguyen Van"  value="<?php echo $user[0]['firstname']?> " disabled>
+          <label for="firstname">Year_start</label>
+          <input type="date"
+            class="form-control" name="year_start" id="year_start" aria-describedby="helpId" placeholder="10/4/2020" value="<?php echo $education[0]['year_start'] ?>" disabled>
         </div>
         <div class="form-group">
-          <label for="lastname">Last Name</label>
-          <input type="text"
-            class="form-control" name="lastname" id="lastname" aria-describedby="helpId" placeholder="An"  value="<?php echo $user[0]['lastname']?> " disabled>
+          <label for="lastname">Year_end</label>
+          <input type="date"
+            class="form-control" name="year_end" id="year_end" aria-describedby="helpId" placeholder="18/12/2020" value="<?php echo $education[0]['year_end'] ?>" disabled>
         </div>
         <div class="form-group">
-            <label>Gender</label>
-            <div class="form-check">
-                <input type="radio" id="male" name="gender" value="1" <?php if ($user[0]['gender'] == 1) {echo "checked";}?> disabled>
-                <label for="male">Nam</label><br>
-                <input type="radio" id="female" name="gender" value="0" <?php if ($user[0]['gender'] == 0) {echo "checked";}?> disabled>
-                <label for="female">Nữ</label>
-            </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email"
-            class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="test@gmail.com"  value="<?php echo $user[0]['email']?> " disabled>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="text"
-            class="form-control" name="phone" id="phone" aria-describedby="helpId" placeholder="0123456789"  value="<?php echo $user[0]['phone']?> " disabled>
-        </div>
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text"
-            class="form-control" name="address" id="address" aria-describedby="helpId" placeholder="Address"  value="<?php echo $user[0]['address']?> " disabled>
-        </div>
-        <div class="form-group">
-          <label for="pass">Password</label>
-          <input type="password"
-            class="form-control" name="pass" id="pass" aria-describedby="helpId" placeholder="******"  value="<?php echo $user[0]['password']?> " disabled>
+          <label for="lastname">Content</label>
+          <textarea class="form-control" name="content" id="content" rows="10" placeholder="trường đại học Thủy Lợi" disabled><?php echo $education[0]['content'] ?></textarea>  
         </div>
         <a href="<?php echo URL::to('/list_user'); ?>">List user</a>
     </form>

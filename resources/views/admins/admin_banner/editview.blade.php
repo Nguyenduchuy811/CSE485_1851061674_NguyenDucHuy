@@ -2,6 +2,8 @@
 <h1 class="text-center">Edit banner</h1>  
     <form action="<?php echo URL::to('/add_banner_action'); ?>" method="post">
         @csrf
+        <input type="hidden"
+            name="id" id="id" aria-describedby="helpId" placeholder="John" value="<?php echo $banner[0]['id']?>">
         <div class="form-group avatar_member">
           <label for="avatar_img_member">Chose image</label>
           <input type="file" class="form-control-file" name="avatar_img_member" id="avatar_img_member" placeholder="avatar_img_member" aria-describedby="fileHelpId" value="<?php echo $banner[0]["image"];?>">
