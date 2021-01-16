@@ -1,5 +1,6 @@
 
 <section>
+<h1 class="text-center">Edit member cv</h1>  
     <form action="<?php echo URL::to('/edit_member_cv_action'); ?>" method="post">
         @csrf
         <input type="hidden"

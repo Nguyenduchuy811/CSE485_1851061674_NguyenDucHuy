@@ -1,6 +1,6 @@
 <section>
     <h1 class="text-center">Add thanks</h1>  
-    <form action="<?php echo URL::to('/add_user_action'); ?>" method="post">
+    <form action="<?php echo URL::to('/add_thank_letter_action'); ?>" method="post">
         @csrf
         <div class="form-group">
           <label for="lastname">Content</label>
