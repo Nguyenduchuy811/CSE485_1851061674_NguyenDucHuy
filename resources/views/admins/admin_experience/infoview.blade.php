@@ -1,4 +1,5 @@
-<section>
+<section> 
+     <h1 class="text-center">Information experience</h1>  
     <form>
         @csrf
         <div class="form-group">

@@ -1,5 +1,6 @@
-<section>
-    <form action="<?php echo URL::to('/edit_banner_action'); ?>" method="post" enctype="multipart/form-data">
+<section class="input_form">
+<h1 class="text-center">Edit banner</h1>  
+    <form action="<?php echo URL::to('/add_banner_action'); ?>" method="post">
         @csrf
         <div class="form-group avatar_member">
           <label for="avatar_img_member">Chose image</label>

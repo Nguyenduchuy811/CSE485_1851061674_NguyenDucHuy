@@ -1,4 +1,5 @@
 <section>
+   <h1 class="text-center">Information banner</h1>  
     <form>
         @csrf
         <div class="form-group">

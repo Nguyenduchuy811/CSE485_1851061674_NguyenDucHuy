@@ -1,54 +1,26 @@
 <section>
+<h1 class="text-center">Add education</h1>  
     <form action="<?php echo URL::to('/add_user_action'); ?>" method="post">
         @csrf
         <div class="form-group">
-          <label for="username">User Name</label>
+          <label for="username">Member_cv_id</label>
           <input type="text"
-            class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="John" required>
+            class="form-control" name="member_cv_id" id="member_cv_id" aria-describedby="helpId" placeholder="1" required>
         </div>
         <div class="form-group">
-          <label for="firstname">First Name</label>
+          <label for="firstname">Year_start</label>
+          <input type="date"
+            class="form-control" name="year_start" id="year_start" aria-describedby="helpId" placeholder="10/4/2020" required>
+        </div>
+        <div class="form-group">
+          <label for="lastname">Year_end</label>
+          <input type="date"
+            class="form-control" name="year_end" id="year_end" aria-describedby="helpId" placeholder="18/12/2020" required>
+        </div>
+        <div class="form-group">
+          <label for="lastname">Content</label>
           <input type="text"
-            class="form-control" name="firstname" id="firstname" aria-describedby="helpId" placeholder="Nguyen Van" required>
-        </div>
-        <div class="form-group">
-          <label for="lastname">Last Name</label>
-          <input type="text"
-            class="form-control" name="lastname" id="lastname" aria-describedby="helpId" placeholder="An" required>
-        </div>
-        <div class="form-group">
-            <label>Gender</label>
-            <div class="form-check">
-                <input type="radio" id="male" name="gender" value="1" required>
-                <label for="male">Nam</label><br>
-                <input type="radio" id="female" name="gender" value="0">
-                <label for="female">Nữ</label>
-            </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email"
-            class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="test@gmail.com" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="text"
-            class="form-control" name="phone" id="phone" aria-describedby="helpId" placeholder="0123456789" required>
-        </div>
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text"
-            class="form-control" name="address" id="address" aria-describedby="helpId" placeholder="Address" required>
-        </div>
-        <div class="form-group">
-          <label for="pass">Password</label>
-          <input type="password"
-            class="form-control" name="pass" id="pass" aria-describedby="helpId" placeholder="******" required>
-        </div>
-        <div class="form-group">
-          <label for="cpass">Confirm Password</label>
-          <input type="password"
-            class="form-control" name="cpass" id="cpass" aria-describedby="helpId" placeholder="******" required>
+            class="form-control" name="content" id="content" aria-describedby="helpId" placeholder="trường đại học Thủy Lợi" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
