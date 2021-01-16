@@ -85,43 +85,53 @@ class Admin_membercvController extends Controller
     }
 
     public function editView(){
-        $store = new users;
+        $store = new member_cv;
         $getdata = $store->where('id',$_GET['id'])->get();
-        $user = json_decode(json_encode($getdata), true);
+        $members = json_decode(json_encode($getdata), true);
         // var_dump($users);die();
         $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
             echo view('templates/header_admin_view');
-            echo view('admins/admin_user/editview')->with('user', $user);
+            echo view('admins/admin_member_cv/editview')->with('members', $members);
             echo view('templates/footer_admin_view');
         }
     }
 
     public function editAction(Request $request){
-        $store = new users;
-        // $store->find($request->id);
-        // $store->username = $request->username;
-        // $store->password = $request->pass;
-        // $store->firstname = $request->firstname;
-        // $store->lastname = $request->lastname;
-        // $store->gender = $request->gender;
-        // $store->email = $request->email;
-        // $store->phone = $request->phone;
-        // $store->address = $request->address;
-        $arrdata = [
-            'username'=>$request->username,
-            'password'=>$request->pass,
-            'firstname'=>$request->firstname,
-            'lastname'=>$request->lastname,
-            'gender'=>$request->gender,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'address'=>$request->address
-        ];
+        $store = new member_cv;
+
+        $img = $request->avatar_img_member;
+        if ($img!=null) {
+            $input['image'] = time().'.'.$request->avatar_img_member->getClientOriginalExtension();
+            $path = public_path('/image');
+            $img->move(public_path('/image'), $input['image']);
+            $arrdata = [
+                'first_name'=>$request->firstname,
+                'last_name'=>$request->lastname,
+                'gender'=>$request->gender,
+                'email'=>$request->email,
+                'phone'=>$request->phone,
+                'address'=>$request->address,
+                'note'=>$request->note,
+                'image'=>$input['image']
+            ];
+        }else{
+            $arrdata = [
+                'first_name'=>$request->firstname,
+                'last_name'=>$request->lastname,
+                'gender'=>$request->gender,
+                'email'=>$request->email,
+                'phone'=>$request->phone,
+                'address'=>$request->address,
+                'note'=>$request->note
+            ];
+        }
+        
+        
         // dd($store);die();
         $store->where('id',$request->id)->update($arrdata);
-        return Redirect::to('/list_user');       
+        return Redirect::to('/list_member_cv');       
     }
 }
