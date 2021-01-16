@@ -37,7 +37,7 @@ $(document).ready(function(){
       var reader = new FileReader();
       
       reader.onload = function(e) {
-        $('#avatar_img_member').attr('src', e.target.result);
+        $('#avatar_show').attr('src', e.target.result);
       }
       
       reader.readAsDataURL(input.files[0]);
