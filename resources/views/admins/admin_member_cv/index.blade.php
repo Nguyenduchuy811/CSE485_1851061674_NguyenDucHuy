@@ -9,7 +9,6 @@
             <th>Stt</th>
             <th>Image</th>
             <th>Id</th>
-            <th>User_id</th>
             <th>Fisrt_name</th>
             <th>Last_name</th>
             <th>Gender</th>
@@ -30,7 +29,6 @@
             <td scope="row"><?php echo $key+1;?></td>
             <td><?php echo $value["id"];?></td>            
             <td><img src="../image/<?php echo $value["image"];?>" alt="<?php echo $value["last_name"];?>"></td>
-            <td><?php echo $value["user_id"];?></td>
             <td><?php echo $value["first_name"];?></td>
             <td><?php echo $value["last_name"];?></td>
             <td><?php if($value["gender"]==1){

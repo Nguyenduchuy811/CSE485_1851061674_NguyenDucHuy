@@ -60,9 +60,9 @@ figcaption .header_intro p{color: #ccc;text-align: justify;}
 
 
 /* cv_login_view */
-.login_page_view,.admin_page_view{background-image: url('../image/115638.jpg');min-height: 100vh;object-fit: cover;object-position: center;position: relative;}
+.login_page_view,.admin_page_view{display: table;width: 100%;background-image: url('../image/115638.jpg');min-height: 100%;object-fit: cover;object-position: center;position: relative;}
 .login_page_view::before{content: "";position: absolute;width: 100%;height: 100%;top: 0;left: 0;background-color: #ffffff61;}
-.admin_page_view::before{content: "";position: absolute;width: 100%;height: 100%;top: 0;z-index: -1;left: 0;background-color: #ffffff5e;}
+.admin_page_view::before{content: "";position: absolute;width: 100%;top: 0;z-index: -1;left: 0;background-color: #ffffff5e;min-height: 100%;}
 .login_input_view{position: relative; height: 100vh;}
 .login_view_form{position: absolute;width: 80%;/* height: 126px; */left: 50%;top: 50%;transform: translateX(-50%) translateY(-50%);-webkit-transform: translateX(-50%) translateY(-50%);background-color: #fbf8f87a;padding: 100px;}
 .login_index_button{float: left !important; background-color: lightpink !important;color: black !important;}

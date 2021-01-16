@@ -7,6 +7,9 @@ use Session;
 use Illuminate\Support\Facades\DB;
 use App\Models\member_cv;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+
 
 class Admin_membercvController extends Controller
 {
@@ -37,17 +40,26 @@ class Admin_membercvController extends Controller
 
     public function addAction(Request $request){
         $store = new member_cv;
-        $store->username = $request->username;
-        $store->password = $request->pass;
-        $store->firstname = $request->firstname;
-        $store->lastname = $request->lastname;
+        
+        $store->first_name = $request->firstname;
+        $store->last_name = $request->lastname;
         $store->gender = $request->gender;
         $store->email = $request->email;
         $store->phone = $request->phone;
         $store->address = $request->address;
-        // dd($request->pass);
+        $store->note = $request->note;
+
+        $img = $request->avatar_img_member;
+        $input['image'] = time().'.'.$request->avatar_img_member->getClientOriginalExtension();
+        $path = public_path('/image');
+        $img->move(public_path('/image'), $input['image']);
+        
+        $store->image = $input['image'];
+        
+        // dd($request->request);
         $store->save();
-        return Redirect::to('/list_member_cv');       
+        return Redirect::to('/list_member_cv');     
+        // dd($request->request);  
     }
 
     public function deleteAction(){

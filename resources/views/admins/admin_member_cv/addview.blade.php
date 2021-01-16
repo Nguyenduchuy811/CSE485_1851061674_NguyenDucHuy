@@ -1,10 +1,10 @@
-<section class="input_form">
-    <form action="<?php echo URL::to('/add_user_action'); ?>" method="post">
+<section class="input_form member_page">
+    <form action="<?php echo URL::to('/add_member_cv_action'); ?>" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="username">User Name</label>
           <input type="text"
-            class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="John" required>
+            class="form-control" name="username" id="userid" aria-describedby="helpId" placeholder="">
         </div>
         <div class="form-group">
           <label for="firstname">First Name</label>
@@ -45,22 +45,10 @@
           <input type="text"
             class="form-control" name="address" id="address" aria-describedby="helpId" placeholder="Address" required>
         </div>
-        <div class="form-group">
-          <label for="pass">Password</label>
-          <input type="password"
-            class="form-control" name="pass" id="pass" aria-describedby="helpId" placeholder="******" required>
-        </div>
-        <div class="form-group">
-          <label for="cpass">Confirm Password</label>
-          <input type="password"
-            class="form-control" name="cpass" id="cpass" aria-describedby="helpId" placeholder="******" required>
-        </div>
-        <div class="form-group">
-          <label class="custom-file">
-            <input type="file" name="image" id="image" placeholder="chose" class="custom-file-input" aria-describedby="fileHelpId">
-            <span class="custom-file-control"><img src="../image/no_image.gif" alt=""></span>
-          </label>
-          <small id="fileHelpId" class="form-text text-muted">Help text</small>
+        <div class="form-group avatar_member">
+          <label for="avatar_img_member">Chose image</label>
+          <input type="file" class="form-control-file" name="avatar_img_member" id="avatar_img_member" placeholder="avatar_img_member" aria-describedby="fileHelpId">
+          <span class="custom-file-control"><img id="avatar_img_member" src="../image/no_image.gif" alt=""></span>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
