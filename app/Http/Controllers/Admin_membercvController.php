@@ -103,6 +103,7 @@ class Admin_membercvController extends Controller
         $store = new member_cv;
 
         $img = $request->avatar_img_member;
+        var_dump($img);die();
         if ($img!=null) {
             $input['image'] = time().'.'.$request->avatar_img_member->getClientOriginalExtension();
             $path = public_path('/image');
