@@ -4,6 +4,7 @@
 				<div class="login_input_view form-input col-md-12">
 					<form action="<?php echo URL::to('/loginaction'); ?>" method="post" class="login_view_form">
 					@csrf
+						<h1>Login</h1>
 						<div class="form-group">
 						<label for="email">Email</label>
 						<input type="email" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Nhập Email" required>
