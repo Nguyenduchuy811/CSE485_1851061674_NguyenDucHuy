@@ -58,7 +58,7 @@ class Admin_userController extends Controller
                 $store->email = $request->email;
                 $store->phone = $request->phone;
                 $store->address = $request->address;
-                // $store->save();
+                $store->save();
                 Session::put('err_pass',false);
                 return Redirect::to('list_user'); 
             }else{
