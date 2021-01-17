@@ -1,6 +1,6 @@
 <section class="input_form">
 <h1 class="text-center">Edit banner</h1>  
-    <form action="<?php echo URL::to('/add_banner_action'); ?>" method="post" enctype="multipart/form-data">
+    <form action="<?php echo URL::to('/edit_banner_action'); ?>" method="post" enctype="multipart/form-data">
         @csrf
         <input type="hidden"
             name="id" id="id" aria-describedby="helpId" placeholder="John" value="<?php echo $banner[0]['id']?>">
