@@ -89,5 +89,6 @@ Route::get('/add_banner', [Admin_bannerController::class, 'addView']);
 Route::post('/add_banner_action', [Admin_bannerController::class, 'addAction']);
 Route::get('/delete_banner', [Admin_bannerController::class, 'deleteAction']);
 Route::get('/edit_banner', [Admin_bannerController::class, 'editView']);
+Route::post('/edit_banner_action', [Admin_bannerController::class, 'editAction']);
 Route::get('/info_banner', [Admin_bannerController::class, 'infoView']);
 
