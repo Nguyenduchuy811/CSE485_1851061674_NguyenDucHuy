@@ -49,6 +49,7 @@ class HomeController extends Controller
         $profile_content = new profile_content;
         $getdata_profile_content = $profile_content->where('member_cv_id', $request->id)->get();
         $profile_content_data = json_decode(json_encode($getdata_profile_content), true);
+        // var_dump($profile_content_data);die();
         
         return view('personal_profile/index')->with('education', $education_data)
                                              ->with('experience', $experience_data)

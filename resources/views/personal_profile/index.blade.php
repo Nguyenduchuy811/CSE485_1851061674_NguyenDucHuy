@@ -27,7 +27,7 @@
 											<div class="carousel-inner" role="listbox">
 												<?php
 													foreach ($profile as $keypf => $valepf) {
-														if($keypf == 1){
+														if($keypf == 0){
 												?>
 														<div class="carousel-item active"><p class="config_item"><?php echo $valepf['content']?></p></div>
 												<?php
@@ -113,14 +113,14 @@
 								<div id="carouselId" class="carousel slide" data-ride="carousel">
 									<div class="carousel-inner" role="listbox">
 										<?php
-											foreach ($profile as $keypf => $valepf) {
-												if($keypf == 1){
+											foreach ($profile as $keypfm => $valepfm) {
+												if($keypfm == 0){
 										?>
-												<div class="carousel-item active"><p class="config_item"><?php echo $valepf['content']?></p></div>
+												<div class="carousel-item active"><p class="config_item"><?php echo $valepfm['content']?></p></div>
 										<?php
 												}else{
 										?>	
-												<div class="carousel-item"><p class="config_item"><?php echo $valepf['content']?></p></div>
+												<div class="carousel-item"><p class="config_item"><?php echo $valepfm['content']?></p></div>
 										<?php
 												}
 											}
