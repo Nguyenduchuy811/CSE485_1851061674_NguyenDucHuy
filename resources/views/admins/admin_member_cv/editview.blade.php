@@ -1,11 +1,7 @@
-
-<<<<<<< HEAD
 <section>
 <h1 class="text-center">Edit member cv</h1>  
-=======
 <section class="input_form">
->>>>>>> 55441190b0700b84d1efc7933b7e88fff1dcec2b
-    <form action="<?php echo URL::to('/edit_member_cv_action'); ?>" method="post">
+    <form action="<?php echo URL::to('/edit_member_cv_action'); ?>" method="post"  enctype="multipart/form-data">
         @csrf
         <input type="hidden"
             name="id" id="id" aria-describedby="helpId" placeholder="John" value="<?php echo $members[0]['id']?>">
