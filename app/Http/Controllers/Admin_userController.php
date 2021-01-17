@@ -17,6 +17,8 @@ class Admin_userController extends Controller
         $users = json_decode(json_encode($getdata), true);
         // var_dump($users);die();
         $username = Session::get('username');
+        Session::put('err_add',false);
+        Session::put('err_pass',false);
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
@@ -39,17 +41,32 @@ class Admin_userController extends Controller
 
     public function addAction(Request $request){
         $store = new users;
-        $store->username = $request->username;
-        $store->password = $request->pass;
-        $store->firstname = $request->firstname;
-        $store->lastname = $request->lastname;
-        $store->gender = $request->gender;
-        $store->email = $request->email;
-        $store->phone = $request->phone;
-        $store->address = $request->address;
-        // dd($request->pass);
-        $store->save();
-        return Redirect::to('/list_user');       
+        $getdata = $store->where('email' , $request->email)
+                        ->get();
+        $user = json_decode(json_encode($getdata), true);
+        if ($user != null) {
+            Session::put('err_add',true);
+            return Redirect::to("add_user");
+        }else{
+            Session::put('err_add',false);
+            if ($request->pass == $request->cpass) {
+                $store->username = $request->username;
+                $store->password = password_hash($request->pass, PASSWORD_DEFAULT);
+                $store->firstname = $request->firstname;
+                $store->lastname = $request->lastname;
+                $store->gender = $request->gender;
+                $store->email = $request->email;
+                $store->phone = $request->phone;
+                $store->address = $request->address;
+                // $store->save();
+                Session::put('err_pass',false);
+                return Redirect::to('list_user'); 
+            }else{
+                Session::put('err_pass',true);
+                return Redirect::to('add_user');
+            }
+        }    
+        // var_dump(Session::get('err_pass'));die();
     }
 
     public function deleteAction(){

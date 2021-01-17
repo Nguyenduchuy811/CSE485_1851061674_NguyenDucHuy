@@ -1,3 +1,7 @@
+<?php 
+  $user_session = Session::get('username');
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,7 +28,7 @@
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="#">Quản trị</a>
+        <a href="#">Admin Page</a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>
@@ -35,8 +39,8 @@
             alt="User picture">
         </div>
         <div class="user-info">
-          <span class="user-name">Jhon
-            <strong>Smith</strong>
+          <span class="user-name"><?php echo $user_session[0]['firstname'] ?>
+            <strong><?php echo $user_session[0]['lastname'] ?></strong>
           </span>
           <span class="user-role">Administrator</span>
           <span class="user-status">
@@ -174,7 +178,7 @@
             </div>
           </li>
 
-          <li class="header-menu">
+          <!-- <li class="header-menu">
             <span>Extra</span>
           </li>
           <li>
@@ -195,7 +199,7 @@
               <i class="fa fa-folder"></i>
               <span>Examples</span>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
       <!-- sidebar-menu  -->

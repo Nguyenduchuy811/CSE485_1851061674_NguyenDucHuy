@@ -51,8 +51,8 @@ $(document).ready(function(){
 
     $('.thank_slide').owlCarousel({
         margin:10,
-        nav:true,
-        dots:false,
+        nav:false,
+        dots:true,
         autoplay:true,
         autoplayTimeout:8000,
         autoplayHoverPause:false,

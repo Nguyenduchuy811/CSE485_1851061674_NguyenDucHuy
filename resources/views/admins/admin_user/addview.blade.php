@@ -1,3 +1,11 @@
+<?php
+  if (Session::get('err_add')==true) {
+    echo "<script>alert('Email exist!')</script>";
+  };
+  if (Session::get('err_pass')==true) {
+    echo "<script>alert('Password or Passwword Confirm is wrong!')</script>";
+  }
+?>
 <section>
     <h1 class="text-center">Add user</h1>  
     <form action="<?php echo URL::to('/add_user_action'); ?>" method="post">

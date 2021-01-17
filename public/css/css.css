@@ -2,6 +2,7 @@ figure{overflow: hidden;display: block;width: 100%;}
 img{display: block;width: 100%; object-position: center; object-fit: cover;}
 body{font-family: 'Time New Rome'; letter-spacing: 1px;}
 .active{display: block !important;}
+.footer_index_page{padding: 20px;text-align: center;background-color: #000;color: gold;margin-top: 50px;}
 
 
 /*index page*/
@@ -30,7 +31,7 @@ body{font-family: 'Time New Rome'; letter-spacing: 1px;}
 .left_avatar{position: relative;}
 .left_avatar img{height: 800px;}
 figure{margin: 0;}
-figcaption{position: absolute;bottom: 0;left: 0;color: #fff;padding: 50px;background-color: #0000008c;padding-bottom: 0;}
+figcaption{position: absolute;bottom: 0;left: 0;color: #fff;padding: 50px;background-color: #0000008c;padding-bottom: 0;width: 100%;}
 figcaption .header_intro{border-bottom: 10px solid orange;}
 figcaption .header_intro h3{text-align: center; padding-bottom: 10px;border-bottom: 2px solid orange; margin-bottom: 30px;text-transform: uppercase; letter-spacing: 2px;}
 figcaption .header_intro p{color: #ccc;text-align: justify;}
@@ -50,7 +51,7 @@ figcaption .header_intro p{color: #ccc;text-align: justify;}
 .right_item:last-child{margin-bottom: 0;}
 .hedaer_item_right{margin-bottom: 30px;}
 .hedaer_item_right h3{text-transform: uppercase;letter-spacing: 3px; padding-bottom: 20px; border-bottom: 2px solid orange;margin: 0%;font-weight: 400}
-.right_item p{color: #ccc;margin-bottom: 50px;}
+.right_item p{color: #ccc;margin-bottom: 50px;overflow-x: scroll;}
 .right_item .main_info .item_list_info:last-child p{margin-bottom: 0;}
 .left_place{border-right: 2px solid orange;position: relative;}
 .left_place::after{content: '';position: absolute;top: 0px;right: -11px;width: 20px;height: 20px;border: 2px solid orange;border-radius: 100%;background-color: #ebe9e9;}
@@ -76,3 +77,8 @@ figcaption .header_intro p{color: #ccc;text-align: justify;}
 .input_form img{width: 150px; height: 150px;display: block;}
 /* .table_design{overflow-x: auto;} */
 .size_app{max-width: 800px;max-height: 100px;display: block;overflow: scroll;}
+.config_item{height: 150px; overflow: scroll; margin-bottom: 0 !important;}
+.cv_view .carousel a{opacity: 0; transition: all 0.5s ease-in-out;}
+.cv_view .carousel:hover a{opacity: 1;}
+.item_dashboard{background-color: #9a9696a3;padding: 50px;text-align: center;color: #fff;}
+.item_dashboard h3{font-size: 23px;}

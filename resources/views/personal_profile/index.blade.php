@@ -23,7 +23,31 @@
 								<figcaption>
 									<div class="header_intro">
 										<h3>Profile</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus varius ante vestibulum lacinia. Duis eleifend auctor dui, eu lacinia sem pretium ac. Praesent nisi quam, aliquam eget lacus ut, mattis feugiat turpis. Pellentesque congue sapien sed placerat blandit. Donec commodo molestie leo eu tempus</p>						
+										<div id="carouselId1" class="carousel slide" data-ride="carousel">
+											<div class="carousel-inner" role="listbox">
+												<?php
+													foreach ($profile as $keypf => $valepf) {
+														if($keypf == 1){
+												?>
+														<div class="carousel-item active"><p class="config_item"><?php echo $valepf['content']?></p></div>
+												<?php
+														}else{
+												?>	
+														<div class="carousel-item"><p class="config_item"><?php echo $valepf['content']?></p></div>
+												<?php
+														}
+													}
+												?>
+											</div>
+											<a class="carousel-control-prev" href="#carouselId1" role="button" data-slide="prev">
+												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+												<span class="sr-only">Previous</span>
+											</a>
+											<a class="carousel-control-next" href="#carouselId1" role="button" data-slide="next">
+												<span class="carousel-control-next-icon" aria-hidden="true"></span>
+												<span class="sr-only">Next</span>
+											</a>
+										</div>
 									</div>
 								</figcaption>
 							</div>
@@ -86,13 +110,31 @@
 								<h3>Profile</h3>
 							</div>
 							<div class="item_pro_right_info">
-							<?php
-									foreach ($profile as $keypf => $valepf) {
-								?>
-										<p><?php echo $valepf['content']?></p>
-								<?php
-									}
-								?>				
+								<div id="carouselId" class="carousel slide" data-ride="carousel">
+									<div class="carousel-inner" role="listbox">
+										<?php
+											foreach ($profile as $keypf => $valepf) {
+												if($keypf == 1){
+										?>
+												<div class="carousel-item active"><p class="config_item"><?php echo $valepf['content']?></p></div>
+										<?php
+												}else{
+										?>	
+												<div class="carousel-item"><p class="config_item"><?php echo $valepf['content']?></p></div>
+										<?php
+												}
+											}
+										?>
+									</div>
+									<a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a>
+									<a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+										<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
+								</div>				
 							</div>
 						</div>
 						<div class="right_item ex_right_info">
@@ -151,9 +193,9 @@
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<!-- <link rel="stylesheet" href="/css/newcss.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<!-- <link rel="stylesheet" href="/css/newcss.css"> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html> -->

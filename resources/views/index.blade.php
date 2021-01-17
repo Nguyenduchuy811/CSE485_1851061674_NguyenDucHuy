@@ -149,8 +149,8 @@
 				</div>
 			</div>
 		</div>
-	  <footer>
-			design by huy béo
+	  <footer class="footer_index_page">
+			DESIGN BY GROUP 10
 	  </footer>
 
 	<!-- Optional JavaScript -->
