@@ -38,7 +38,7 @@ class Admin_thank_letterController extends Controller
 
     public function addAction(Request $request){
         $store = new thank_letter;
-        $store->content = $request->content;
+        $store->content = nl2br(trim($request->content));
         // dd($request->pass);
         $store->save();
         return Redirect::to('/list_thank_letter');       
@@ -84,7 +84,7 @@ class Admin_thank_letterController extends Controller
     public function editAction(Request $request){
         $store = new thank_letter;
         $arrdata = [
-            'content'=>$request->content
+            'content'=>nl2br(trim($request->content))
         ];
         // dd($store);die();
         $store->where('id',$request->id)->update($arrdata);

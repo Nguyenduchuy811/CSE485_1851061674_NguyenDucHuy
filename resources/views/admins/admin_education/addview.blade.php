@@ -3,9 +3,17 @@
     <form action="<?php echo URL::to('/add_education_action'); ?>" method="post">
         @csrf
         <div class="form-group">
-          <label for="username">Member_cv_id</label>
-          <input type="text"
-            class="form-control" name="member_cv_id" id="member_cv_id" aria-describedby="helpId" placeholder="1" required>
+          <label for="member_cv_id">Member</label>
+          <select class="form-control" name="member_cv_id" id="member_cv_id" required>
+            <option value="">......</option>
+            <?php
+              foreach ($member_cv as $key => $valuecv) {
+            ?>
+                <option value="<?php echo $valuecv['id']?>"><?php echo $valuecv['first_name'] . ' ' . $valuecv['last_name'] . ' - '. $valuecv['email']?></option>
+            <?php
+              }
+            ?>
+          </select>
         </div>
         <div class="form-group">
           <label for="firstname">Year_date_start</label>

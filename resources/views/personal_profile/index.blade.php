@@ -87,9 +87,9 @@
 							</div>
 							<div class="item_pro_right_info">
 							<?php
-									foreach ($profile as $kex => $valex) {
+									foreach ($profile as $keypf => $valepf) {
 								?>
-										<p></p>
+										<p><?php echo $valepf['content']?></p>
 								<?php
 									}
 								?>				

@@ -5,7 +5,7 @@
         <thead class="thead-inverse">
         <tr>            
             <th>Stt</th>
-            <th>Member_cv_id</th>
+            <th>Member_cv</th>
             <th>Year_start</th>
             <th>Year_end</th>
             <th>Content</th>
@@ -20,10 +20,10 @@
             ?>
         <tr>
             <td><?php echo $key+1?></td>
-            <td><?php echo $value["member_cv_id"];?></td>
+            <td><?php echo $value['first_name'] . ' ' . $value['last_name'] . ' - '. $value['email']?></td>
             <td><?php echo $value["year_start"];?></td>
             <td><?php echo $value["year_end"];?></td>
-            <td><?php echo $value["content"];?></td>
+            <td class="size_app"><?php echo $value["content"];?></td>
             <td class="icon_admin">
             <a href="<?php echo URL::to('/'); ?>/edit_experience?id=<?php echo $value['id'];?>" class="fas fa-user-edit"></a> 
                 <a href="<?php echo URL::to('/'); ?>/delete_experience?id=<?php echo $value['id'] ?>" class="fas fa-trash-alt"

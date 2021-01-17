@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
           <label for="content">Content</label>
-          <textarea class="form-control" name="content" id="content" rows="10" placeholder="content here" disabled><?php echo $profile_content[0]['content']?></textarea>
+          <textarea class="form-control" name="content" id="content" rows="10" placeholder="content here" disabled><?php echo str_replace('<br />','',$profile_content[0]['content'])?></textarea>
         </div>
         <a href="<?php echo URL::to('/list_profile_content'); ?>">List profile content</a>
     </form>

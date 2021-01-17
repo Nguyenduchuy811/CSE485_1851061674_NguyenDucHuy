@@ -50,7 +50,7 @@ class Admin_profile_contentController extends Controller
         $store = new profile_content;
         
         $store->member_cv_id = $request->member_cv_id;
-        $store->content = $request->content;
+        $store->content = nl2br(trim($request->content));
         // dd($request->pass);
         $store->save();
         return Redirect::to('/list_profile_content');       
@@ -102,7 +102,7 @@ class Admin_profile_contentController extends Controller
         $store = new profile_content;
         $arrdata = [
             'id'=>$request->id,
-            'content'=>$request->content
+            'content'=>nl2br(trim($request->content))
         ];
         // dd($store);die();
         $store->where('id',$request->id)->update($arrdata);

@@ -3,9 +3,16 @@
     <form>
         @csrf
         <div class="form-group">
-          <label for="username">Member_cv_id</label>
-          <input type="text"
-            class="form-control" name="member_cv_id" id="member_cv_id" aria-describedby="helpId" placeholder="1" value="<?php echo $education[0]['member_cv_id'] ?>" disabled>
+          <label for="member_cv_id">Member</label>
+          <select class="form-control" name="member_cv_id" id="member_cv_id" disabled>
+            <?php
+              foreach ($education as $key => $valuect) {
+            ?>
+                <option value="<?php echo $valuect['id']?>" selected><?php echo $valuect['first_name'] . ' ' . $valuect['last_name'] . ' - '. $valuect['email']?></option>
+            <?php
+              }
+            ?>
+          </select>
         </div>
         <div class="form-group">
           <label for="firstname">Year_start</label>
@@ -19,8 +26,8 @@
         </div>
         <div class="form-group">
           <label for="lastname">Content</label>
-          <textarea class="form-control" name="content" id="content" rows="10" placeholder="trường đại học Thủy Lợi" disabled><?php echo $education[0]['content'] ?></textarea>  
+          <textarea class="form-control" name="content" id="content" rows="10" placeholder="trường đại học Thủy Lợi" disabled><?php echo str_replace('<br />','',$education[0]['content']) ?></textarea>  
         </div>
-        <a href="<?php echo URL::to('/list_user'); ?>">List user</a>
+        <a href="<?php echo URL::to('/list_education'); ?>">List education</a>
     </form>
 </section>

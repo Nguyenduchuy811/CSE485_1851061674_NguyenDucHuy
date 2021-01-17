@@ -4,10 +4,17 @@
         @csrf
         <input type="hidden"
             name="id" id="id" aria-describedby="helpId" placeholder="John" value="<?php echo $experience[0]['id']?>">
-        <div class="form-group">
-          <label for="username">Member_cv_id</label>
-          <input type="text"
-            class="form-control" name="member_cv_id" id="member_cv_id" aria-describedby="helpId" placeholder="1" value="<?php echo $experience[0]['member_cv_id'] ?>" required>
+            <div class="form-group">
+          <label for="member_cv_id">Member</label>
+          <select class="form-control" name="member_cv_id" id="member_cv_id" disabled>
+            <?php
+              foreach ($experience as $key => $valuect) {
+            ?>
+                <option value="<?php echo $valuect['id']?>" selected><?php echo $valuect['first_name'] . ' ' . $valuect['last_name'] . ' - '. $valuect['email']?></option>
+            <?php
+              }
+            ?>
+          </select>
         </div>
         <div class="form-group">
           <label for="firstname">Year_start</label>
@@ -21,7 +28,7 @@
         </div>
         <div class="form-group">
           <label for="lastname">Content</label>
-          <textarea class="form-control" name="content" id="content" rows="10" placeholder="trường đại học Thủy Lợi" required><?php echo $experience[0]['content'] ?></textarea>
+          <textarea class="form-control" name="content" id="content" rows="10" placeholder="trường đại học Thủy Lợi" required><?php echo str_replace('<br />','',$experience[0]['content']) ?></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

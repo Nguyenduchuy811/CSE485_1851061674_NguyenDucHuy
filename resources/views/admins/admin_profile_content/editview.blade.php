@@ -10,7 +10,7 @@
             <?php
               foreach ($profile_content as $key => $valuect) {
             ?>
-                <option value="<?php echo $valuect['id']?>" selected><?php echo $valuect['first_name'] . ' ' . $valuect['last_name'] . ' - '. $valuect['email']?></option>
+                <option value="<?php echo $valuect['member_cv_id']?>" selected><?php echo $valuect['first_name'] . ' ' . $valuect['last_name'] . ' - '. $valuect['email']?></option>
             <?php
               }
             ?>
@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
           <label for="content">Content</label>
-          <textarea class="form-control" name="content" id="content" rows="10" placeholder="content here" required><?php echo $profile_content[0]['content']?></textarea>
+          <textarea class="form-control" name="content" id="content" rows="10" placeholder="content here" required><?php echo str_replace('<br />','',$profile_content[0]['content'])?></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

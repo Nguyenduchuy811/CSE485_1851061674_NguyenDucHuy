@@ -46,12 +46,13 @@ class HomeController extends Controller
         $getdata_experience = $experience->where('member_cv_id', $request->id)->get();
         $experience_data = json_decode(json_encode($getdata_experience), true);
 
-        $experience = new experience;
-        $getdata_experience = $experience->where('member_cv_id', $request->id)->get();
-        $experience_data = json_decode(json_encode($getdata_experience), true);
+        $profile_content = new profile_content;
+        $getdata_profile_content = $experience->where('member_cv_id', $request->id)->get();
+        $profile_content_data = json_decode(json_encode($getdata_profile_content), true);
         
         return view('personal_profile/index')->with('education', $education_data)
                                              ->with('experience', $experience_data)
+                                             ->with('profile', $profile_content_data)
                                              ->with('member_cv', $member_cv_data);
     }
 }

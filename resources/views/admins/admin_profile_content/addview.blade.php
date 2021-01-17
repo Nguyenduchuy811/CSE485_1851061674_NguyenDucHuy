@@ -4,7 +4,8 @@
         @csrf
         <div class="form-group">
           <label for="member_cv_id">Member</label>
-          <select class="form-control" name="member_cv_id" id="member_cv_id">
+          <select class="form-control" name="member_cv_id" id="member_cv_id" required>
+          <option value="">......</option>
             <?php
               foreach ($member_cv as $key => $valuecv) {
             ?>
