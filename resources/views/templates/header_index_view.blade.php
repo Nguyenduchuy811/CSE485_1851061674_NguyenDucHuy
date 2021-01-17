@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="{{('css/css.css')}}">
 	<link rel="stylesheet" href="css/responsive.css">
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
   </head>
   <body>
 	  <header>

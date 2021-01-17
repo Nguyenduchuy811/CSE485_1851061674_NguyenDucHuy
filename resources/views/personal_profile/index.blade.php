@@ -12,16 +12,13 @@
 	// require 'header_personal_view.php';
 ?> 
 
-<?php 
-    $member_profile = json_decode(json_encode($member_cv), true);
-?>
 	  <section class="cv_view">
 			<div class="cv_main row">
 					<div class="left_info col-md-4">
 						<div class="left_info_nopad">
 							<div class="left_avatar">
 								<figure>
-									<img src="../image/1.jpg" alt="test1">
+									<img src="../image/<?php echo $member_cv[0]['image']?>" alt="test1">
 								</figure>
 								<figcaption>
 									<div class="header_intro">
@@ -38,7 +35,7 @@
 										</div>
 										<div class="info_contact col-md-10">
 											<h4>Address</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus varius ante vestibulum lacinia. Duis eleifend auctor dui,</p>
+											<p><?php echo $member_cv[0]['address']?></p>
 										</div>
 									</div>
 								</div>
@@ -49,7 +46,7 @@
 										</div>
 										<div class="info_contact col-md-10">
 											<h4>Phone</h4>
-											<p>1353405349</p>
+											<p><?php echo $member_cv[0]['phone']?></p>
 										</div>
 									</div>
 								</div>
@@ -59,8 +56,8 @@
 											<i class="fal fa-envelope-open-text"></i>
 										</div>
 										<div class="info_contact col-md-10">
-											<h4>Enail</h4>
-											<p>test@gmail.com</p>
+											<h4>Email</h4>
+											<p><?php echo $member_cv[0]['email']?></p>
 										</div>
 									</div>
 								</div>
@@ -80,8 +77,8 @@
 					</div>
 					<div class="right_info col-md-8">
 						<div class=" header_right_info">
-							<h1>{{ $member_profile['first_name'] . ' ' . $member_profile['last_name']}}</h1>
-							<p>{{ $member_profile['note']}}</p>
+							<h1><?php  echo $member_cv[0]['first_name'].' '.$member_cv[0]['last_name'] ?></h1>
+							<p>{{ $member_cv[0]['note']}}</p>
 							<div class="underlined"></div>
 						</div>
 						<div class="right_item profile_right_info">
@@ -89,7 +86,13 @@
 								<h3>Profile</h3>
 							</div>
 							<div class="item_pro_right_info">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus varius ante vestibulum lacinia. Duis eleifend auctor dui, eu lacinia sem pretium ac. Praesent nisi quam, aliquam eget lacus ut, mattis feugiat turpis. Pellentesque congue sapien sed placerat blandit. Donec commodo molestie leo eu tempus</p>					
+							<?php
+									foreach ($profile as $kex => $valex) {
+								?>
+										<p></p>
+								<?php
+									}
+								?>				
 							</div>
 						</div>
 						<div class="right_item ex_right_info">
@@ -97,36 +100,22 @@
 								<h3>Experience</h3>
 							</div>
 							<div class="main_info">
-								<div class="item_list_info item_ex_right_info">
-									<div class="row">
-										<div class="left_place left_item_ex col-md-3">
-											<b>( 2019 - 2020 )</b>
+								<?php
+									foreach ($experience as $kex => $valex) {
+								?>
+										<div class="item_list_info item_ex_right_info">
+											<div class="row">
+												<div class="left_place left_item_ex col-md-3">
+													<b>( <?php echo date('Y' , strtotime($valex['year_start']))?> - <?php echo date('Y' , strtotime($valex['year_end']))?> )</b>
+												</div>
+												<div class="right_item_ex col-md-9">
+													<p><?php echo $valex['content'] ?></p>						
+												</div>
+											</div>
 										</div>
-										<div class="right_item_ex col-md-9">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus varius ante vestibulum lacinia. Duis eleifend auctor dui, eu lacinia sem pretium ac. Praesent nisi quam, aliquam eget lacus ut, mattis feugiat turpis. Pellentesque congue sapien sed placerat blandit. Donec commodo molestie leo eu tempus</p>						
-										</div>
-									</div>
-								</div>
-								<div class="item_list_info item_ex_right_info">
-									<div class="row">
-										<div class="left_place left_item_ex col-md-3">
-											<b>( 2019 - 2020 )</b>
-										</div>
-										<div class="right_item_ex col-md-9">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus varius ante vestibulum lacinia. Duis eleifend auctor dui, eu lacinia sem pretium ac. Praesent nisi quam, aliquam eget lacus ut, mattis feugiat turpis. Pellentesque congue sapien sed placerat blandit. Donec commodo molestie leo eu tempus</p>						
-										</div>
-									</div>
-								</div>
-								<div class="item_list_info item_ex_right_info">
-									<div class="row">
-										<div class="left_place left_item_ex col-md-3">
-											<b>( 2019 - 2020 )</b>
-										</div>
-										<div class="right_item_ex col-md-9">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus varius ante vestibulum lacinia. Duis eleifend auctor dui, eu lacinia sem pretium ac. Praesent nisi quam, aliquam eget lacus ut, mattis feugiat turpis. Pellentesque congue sapien sed placerat blandit. Donec commodo molestie leo eu tempus</p>						
-										</div>
-									</div>
-								</div>
+								<?php
+									}
+								?>
 							</div>
 						</div>
 						<div class="right_item edu_right_info">
@@ -134,26 +123,22 @@
 								<h3>Education</h3>
 							</div>
 							<div class="main_info">
-								<div class="item_list_info item_edu_right_info">
-									<div class="row">
-										<div class="left_place left_item_edu col-md-3">
-											<b>( 2019 - 2020 )</b>
+							<?php
+									foreach ($education as $keyedu => $valedu) {
+								?>
+										<div class="item_list_info item_edu_right_info">
+											<div class="row">
+												<div class="left_place left_item_edu col-md-3">
+													<b>( <?php echo date('Y' , strtotime($valedu['year_start']))?> - <?php echo date('Y' , strtotime($valedu['year_end']))?> )</b>
+												</div>
+												<div class="right_item_edu col-md-9">
+													<p><?php echo $valedu['content'] ?></p>						
+												</div>
+											</div>
 										</div>
-										<div class="right_item_edu col-md-9">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus varius ante vestibulum lacinia. Duis eleifend auctor dui, eu lacinia sem pretium ac. Praesent nisi quam, aliquam eget lacus ut, mattis feugiat turpis. Pellentesque congue sapien sed placerat blandit. Donec commodo molestie leo eu tempus</p>						
-										</div>
-									</div>
-								</div>
-								<div class="item_list_info item_edu_right_info">
-									<div class="row">
-										<div class="left_place left_item_edu col-md-3">
-											<b>( 2019 - 2020 )</b>
-										</div>
-										<div class="right_item_edu col-md-9">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus varius ante vestibulum lacinia. Duis eleifend auctor dui, eu lacinia sem pretium ac. Praesent nisi quam, aliquam eget lacus ut, mattis feugiat turpis. Pellentesque congue sapien sed placerat blandit. Donec commodo molestie leo eu tempus</p>						
-										</div>
-									</div>
-								</div>
+								<?php
+									}
+								?>
 							</div>
 						</div>
 					</div>

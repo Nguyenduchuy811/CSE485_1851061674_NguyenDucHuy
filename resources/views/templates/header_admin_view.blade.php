@@ -132,6 +132,12 @@
                 <li>
                   <a href="<?php echo URL::to('/add_experience'); ?>">Add experience</a>
                 </li>
+                <li>
+                  <a href="<?php echo URL::to('/list_profile_content'); ?>">List profile content</a>
+                </li>
+                <li>
+                  <a href="<?php echo URL::to('/add_profile_content'); ?>">Add profile content</a>
+                </li>
               </ul>
             </div>
           </li>

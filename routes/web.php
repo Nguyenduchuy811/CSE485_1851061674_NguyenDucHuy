@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin_educationController;
 use App\Http\Controllers\Admin_experienceController;
 use App\Http\Controllers\Admin_bannerController;
 use App\Http\Controllers\Admin_thank_letterController;
+use App\Http\Controllers\Admin_profile_contentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,8 @@ use App\Http\Controllers\Admin_thank_letterController;
 // });
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/profile', [ProfileController::class, 'index']);
+Route::post('/show_content_cv_index', [HomeController::class, 'show_content_cv']);
+Route::get('/test', [HomeController::class, 'test']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/loginaction', [LoginController::class, 'loginAction']);
@@ -58,6 +60,13 @@ Route::get('/edit_education', [Admin_educationController::class, 'editView']);
 Route::post('/edit_education_action', [Admin_educationController::class, 'editAction']);
 Route::get('/info_education', [Admin_educationController::class, 'infoView']);
 
+Route::get('/list_profile_content', [Admin_profile_contentController::class, 'index']);
+Route::get('/add_profile_content', [Admin_profile_contentController::class, 'addView']);
+Route::post('/add_profile_content_action', [Admin_profile_contentController::class, 'addAction']);
+Route::get('/delete_profile_content', [Admin_profile_contentController::class, 'deleteAction']);
+Route::get('/edit_profile_content', [Admin_profile_contentController::class, 'editView']);
+Route::post('/edit_profile_content_action', [Admin_profile_contentController::class, 'editAction']);
+Route::get('/info_profile_content', [Admin_profile_contentController::class, 'infoView']);
 
 Route::get('/list_experience', [Admin_experienceController::class, 'index']);
 Route::get('/add_experience', [Admin_experienceController::class, 'addView']);
