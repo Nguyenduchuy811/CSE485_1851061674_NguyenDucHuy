@@ -13,11 +13,25 @@ use Illuminate\Support\Facades\Storage;
 
 class Admin_membercvController extends Controller
 {
-    public function index(){
+    public function index(){$username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 2) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        }
+
         $store = new member_cv;
         $getdata = $store->get();
         $members = json_decode(json_encode($getdata), true);
-        $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
@@ -28,7 +42,21 @@ class Admin_membercvController extends Controller
     }
 
     public function addView(){
-        $username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 2) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        }
+
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
@@ -70,11 +98,25 @@ class Admin_membercvController extends Controller
     }
 
     public function infoView(){
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 2) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        }
+
         $store = new member_cv;
         $getdata = $store->where('id',$_GET['id'])->get();
         $members = json_decode(json_encode($getdata), true);
         // var_dump($users);die();
-        $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
@@ -85,11 +127,25 @@ class Admin_membercvController extends Controller
     }
 
     public function editView(){
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 2) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        }
+        
         $store = new member_cv;
         $getdata = $store->where('id',$_GET['id'])->get();
         $members = json_decode(json_encode($getdata), true);
         // var_dump($users);die();
-        $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{

@@ -54,6 +54,40 @@
           <input type="password"
             class="form-control" name="cpass" id="cpass" aria-describedby="helpId" placeholder="******" value="<?php echo $user[0]['password']?>" required>
         </div>
+        <?php 
+          $user_info = Session::get('username');
+          $check = false;
+          $arr_permission = explode("|", $user_info[0]['permission']);
+          foreach ($arr_permission as $k => $vinfo) {
+            if ($vinfo == 1) {
+              $check = true;
+            }
+          }
+          if ($check == true) {
+        ?>
+        <div class="form-group">
+          <label>Permission</label>
+          <?php
+            $per_user = $user[0]['permission'];
+            $per_user = explode("|", $per_user);
+            foreach ($permission as $key => $value) {
+          ?>
+              <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="permission[]" id="permission" value="<?php echo $value['id']?>"<?php
+                        foreach ($per_user as $kper_user => $vper_user) {
+                          if ($vper_user == $value['id']) {
+                            echo "checked";
+                          }
+                        }
+                    ?>>
+                    <?php echo $value['content']?>
+                  </label>
+              </div>
+          <?php
+            }
+          }
+          ?>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </section>

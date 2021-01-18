@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin_experienceController;
 use App\Http\Controllers\Admin_bannerController;
 use App\Http\Controllers\Admin_thank_letterController;
 use App\Http\Controllers\Admin_profile_contentController;
+use App\Http\Controllers\Admin_permissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::post('/add_user_action', [Admin_userController::class, 'addAction']);
 Route::get('/delete_user', [Admin_userController::class, 'deleteAction']);
 Route::get('/edit_user', [Admin_userController::class, 'editView']);
 Route::post('/edit_user_action', [Admin_userController::class, 'editAction']);
+Route::get('/edit_admin_user', [Admin_userController::class, 'edit_admin_userView']);
 Route::get('/info_user', [Admin_userController::class, 'infoView']);
 
 Route::get('/list_member_cv', [Admin_membercvController::class, 'index']);
@@ -92,3 +94,4 @@ Route::get('/edit_banner', [Admin_bannerController::class, 'editView']);
 Route::post('/edit_banner_action', [Admin_bannerController::class, 'editAction']);
 Route::get('/info_banner', [Admin_bannerController::class, 'infoView']);
 
+Route::get('/list_permission', [Admin_permissionController::class, 'index']);

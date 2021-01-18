@@ -6,17 +6,36 @@ use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\DB;
 use App\Models\users;
+use App\Models\permission;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class Admin_userController extends Controller
 {
     public function index(){
-        $store = new users;
+        $username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 1) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        } 
+
+        $store = new users; 
         $getdata = $store->get();
         // $getdata = DB::table('user')->get();
         $users = json_decode(json_encode($getdata), true);
-        // var_dump($users);die();
-        $username = Session::get('username');
+        
+        
+        // var_dump($username);die();
         Session::put('err_add',false);
         Session::put('err_pass',false);
         if(!isset($username) || $username == ''){
@@ -30,11 +49,29 @@ class Admin_userController extends Controller
 
     public function addView(){
         $username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 1) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        } 
+
+        $store = new permission;
+        $getdata = $store->get();
+        $permission = json_decode(json_encode($getdata), true);
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
             echo view('templates/header_admin_view');
-            echo view('admins/admin_user/addview');
+            echo view('admins/admin_user/addview')->with('permission', $permission);
             echo view('templates/footer_admin_view');
         }
     }
@@ -58,6 +95,7 @@ class Admin_userController extends Controller
                 $store->email = $request->email;
                 $store->phone = $request->phone;
                 $store->address = $request->address;
+                $store->permission = implode('|', $request->permission);
                 $store->save();
                 Session::put('err_pass',false);
                 return Redirect::to('list_user'); 
@@ -77,56 +115,128 @@ class Admin_userController extends Controller
     }
 
     public function infoView(){
+        $username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 1) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        } 
+
+        $store = new permission;
+        $getdata = $store->get();
+        $permission = json_decode(json_encode($getdata), true);
+
         $store = new users;
         $getdata = $store->where('id',$_GET['id'])->get();
         $user = json_decode(json_encode($getdata), true);
         // var_dump($users);die();
-        $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
             echo view('templates/header_admin_view');
-            echo view('admins/admin_user/infoview')->with('user', $user);
+            echo view('admins/admin_user/infoview')->with('user', $user)
+                                                ->with('permission', $permission);
             echo view('templates/footer_admin_view');
         }
     }
 
     public function editView(){
+        $username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 1) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        } 
+        
+        $store = new permission;
+        $getdata = $store->get();
+        $permission = json_decode(json_encode($getdata), true);
+
         $store = new users;
         $getdata = $store->where('id',$_GET['id'])->get();
         $user = json_decode(json_encode($getdata), true);
-        // var_dump($users);die();
-        $username = Session::get('username');
+
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
             echo view('templates/header_admin_view');
-            echo view('admins/admin_user/editview')->with('user', $user);
+            echo view('admins/admin_user/editview')->with('user', $user)
+                                                    ->with('permission', $permission);
             echo view('templates/footer_admin_view');
         }
     }
 
-    public function editAction(Request $request){
+    public function edit_admin_userView(){
+        $store = new permission;
+        $getdata = $store->get();
+        $permission = json_decode(json_encode($getdata), true);
+
         $store = new users;
-        // $store->find($request->id);
-        // $store->username = $request->username;
-        // $store->password = $request->pass;
-        // $store->firstname = $request->firstname;
-        // $store->lastname = $request->lastname;
-        // $store->gender = $request->gender;
-        // $store->email = $request->email;
-        // $store->phone = $request->phone;
-        // $store->address = $request->address;
-        $arrdata = [
-            'username'=>$request->username,
-            'password'=>$request->pass,
-            'firstname'=>$request->firstname,
-            'lastname'=>$request->lastname,
-            'gender'=>$request->gender,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'address'=>$request->address
-        ];
+        $getdata = $store->where('id',$_GET['id'])->get();
+        $user = json_decode(json_encode($getdata), true);
+
+        $username = Session::get('username');
+        if(!isset($username) || $username == ''){
+            return Redirect::to('login');
+        }else{
+            if ($username[0]['id'] == $_GET['id']) {
+                echo view('templates/header_admin_view');
+                echo view('admins/admin_user/editview')->with('user', $user)
+                                                        ->with('permission', $permission);
+                echo view('templates/footer_admin_view');
+            }else{
+                return Redirect::to('dashboard');
+            }
+        }
+    }
+
+    public function editAction(Request $request){
+        $store = new users; 
+        if (isset($request->permission)) {
+            $permission =implode('|', $request->permission);
+            $arrdata = [
+                'username'=>$request->username,
+                'password'=>$request->pass,
+                'firstname'=>$request->firstname,
+                'lastname'=>$request->lastname,
+                'gender'=>$request->gender,
+                'email'=>$request->email,
+                'phone'=>$request->phone,
+                'address'=>$request->address,
+                'permission' => $permission
+            ];
+        }else{
+            $arrdata = [
+                'username'=>$request->username,
+                'password'=>$request->pass,
+                'firstname'=>$request->firstname,
+                'lastname'=>$request->lastname,
+                'gender'=>$request->gender,
+                'email'=>$request->email,
+                'phone'=>$request->phone,
+                'address'=>$request->address
+            ];
+        }
+        
+        
         // dd($store);die();
         $store->where('id',$request->id)->update($arrdata);
         return Redirect::to('/list_user');       

@@ -1,5 +1,25 @@
 <?php 
   $user_session = Session::get('username');
+  // var_dump($user_session[0]['permission']);die();
+  $user_permission_session = explode("|", $user_session[0]['permission']);
+  $check_user = false;
+  $check_member_cv = false;
+  $check_profile_group = false;
+  $check_thank_letter = false;
+  $check_banner = false;
+  foreach ($user_permission_session as $kpers => $vpers) {
+    if ($vpers == 1) {
+      $check_user = true;
+    } elseif ($vpers == 2) {
+      $check_member_cv = true;
+    } elseif ($vpers == 3) {
+      $check_profile_group = true;
+    } elseif ($vpers == 4) {
+      $check_thank_letter = true;
+    } elseif ($vpers == 5) {
+      $check_banner = true;
+    }
+  }
 ?>
 
 <!doctype html>
@@ -34,6 +54,7 @@
         </div>
       </div>
       <div class="sidebar-header">
+        <a href="<?php echo URL::to('/') ?>/edit_admin_user?id=<?php echo $user_session[0]['id'];?>">
         <div class="user-pic">
           <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
             alt="User picture">
@@ -48,9 +69,10 @@
             <span>Online</span>
           </span>
         </div>
+        </a>
       </div>
       <!-- sidebar-header  -->
-      <div class="sidebar-search">
+      <!-- <div class="sidebar-search">
         <div>
           <div class="input-group">
             <input type="text" class="form-control search-menu" placeholder="Search...">
@@ -61,7 +83,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- sidebar-search  -->
       <div class="sidebar-menu">
         <ul>
@@ -84,99 +106,147 @@
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown">
-            <a>
-              <i class="fa fa-shopping-cart"></i>
-              <span>User</span>
-              <span class="badge badge-pill badge-danger">3</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="<?php echo URL::to('/list_user'); ?>">List user</a>
-                </li>
-                <li>
-                  <a href="<?php echo URL::to('/add_user'); ?>">Add user</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a>
-              <i class="far fa-gem"></i>
-              <span>MemberCv</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="<?php echo URL::to('/list_member_cv'); ?>">List MemberCV</a>
-                </li>
-                <li>
-                  <a href="<?php echo URL::to('/add_member_cv'); ?>">Add MemberCv</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a>
-              <i class="fa fa-chart-line"></i>
-              <span>Profile_group</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="<?php echo URL::to('/list_education'); ?>">List education profile</a>
-                </li>
-                <li>
-                  <a href="<?php echo URL::to('/add_education'); ?>">Add education profile</a>
-                </li>
-                <li>
-                  <a href="<?php echo URL::to('/list_experience'); ?>">List experience</a>
-                </li>
-                <li>
-                  <a href="<?php echo URL::to('/add_experience'); ?>">Add experience</a>
-                </li>
-                <li>
-                  <a href="<?php echo URL::to('/list_profile_content'); ?>">List profile content</a>
-                </li>
-                <li>
-                  <a href="<?php echo URL::to('/add_profile_content'); ?>">Add profile content</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a>
-              <i class="fa fa-globe"></i>
-              <span>Thank letter</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="<?php echo URL::to('/list_thank_letter'); ?>">List thank letter</a>
-                </li>
-                <li>
-                  <a href="<?php echo URL::to('/add_thank_letter'); ?>">Add thank letter</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a>
-              <i class="fa fa-globe"></i>
-              <span>Banner</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="<?php echo URL::to('/list_banner'); ?>">List banner</a>
-                </li>
-                <li>
-                  <a href="<?php echo URL::to('/add_banner'); ?>">Add banner</a>
-                </li>
-              </ul>
-            </div>
-          </li>
+          <?php
+            if ($check_user == true) {
+          ?>
+            <li class="sidebar-dropdown">
+              <a>
+                <i class="fa fa-shopping-cart"></i>
+                <span>User</span>
+                <span class="badge badge-pill badge-danger">3</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="<?php echo URL::to('/list_user'); ?>">List user</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo URL::to('/add_user'); ?>">Add user</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="sidebar-dropdown">
+              <a>
+                <i class="fa fa-shopping-cart"></i>
+                <span>Permission</span>
+                <span class="badge badge-pill badge-danger">3</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="<?php echo URL::to('/list_permission'); ?>">List permission</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          <?php
+            }
+          ?>
+          
+          <?php
+            if ($check_member_cv == true) {
+          ?>
+            <li class="sidebar-dropdown">
+              <a>
+                <i class="far fa-gem"></i>
+                <span>MemberCv</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="<?php echo URL::to('/list_member_cv'); ?>">List MemberCV</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo URL::to('/add_member_cv'); ?>">Add MemberCv</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          <?php
+            }
+          ?>
+            
+          <?php
+            if ($check_profile_group == true) {
+          ?>
+            <li class="sidebar-dropdown">
+              <a>
+                <i class="fa fa-chart-line"></i>
+                <span>Profile_group</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="<?php echo URL::to('/list_education'); ?>">List education profile</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo URL::to('/add_education'); ?>">Add education profile</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo URL::to('/list_experience'); ?>">List experience</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo URL::to('/add_experience'); ?>">Add experience</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo URL::to('/list_profile_content'); ?>">List profile content</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo URL::to('/add_profile_content'); ?>">Add profile content</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          <?php
+            }
+          ?>
+          
+          <?php
+            if ($check_thank_letter == true) {
+          ?>
+            <li class="sidebar-dropdown">
+              <a>
+                <i class="fa fa-globe"></i>
+                <span>Thank letter</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="<?php echo URL::to('/list_thank_letter'); ?>">List thank letter</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo URL::to('/add_thank_letter'); ?>">Add thank letter</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          <?php
+            }
+          ?>
+            
+          <?php
+            if ($check_banner == true) {
+          ?>
+            <li class="sidebar-dropdown">
+              <a>
+                <i class="fa fa-globe"></i>
+                <span>Banner</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="<?php echo URL::to('/list_banner'); ?>">List banner</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo URL::to('/add_banner'); ?>">Add banner</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          <?php
+            }
+          ?>
 
           <!-- <li class="header-menu">
             <span>Extra</span>

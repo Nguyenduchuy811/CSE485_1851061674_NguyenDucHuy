@@ -11,17 +11,28 @@ use Illuminate\Support\Facades\Redirect;
 class Admin_profile_contentController extends Controller
 {
     public function index(){
+        $username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 3) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        }
+        
         $store = new profile_content; 
         $getdata = $store->leftjoin('member_cv', 'member_cv_id', '=', 'member_cv.id') 
                     ->select('profile.*', 'member_cv.first_name', 'member_cv.last_name', 'member_cv.email')
                     ->get();
         // $getdata = DB::table('user')->get();
         $profile_content = json_decode(json_encode($getdata), true);
-
-        // echo "<pre>";
-        // var_dump($profile_content);die();
-
-        $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
@@ -32,11 +43,26 @@ class Admin_profile_contentController extends Controller
     }
 
     public function addView(){
+        $username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 3) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        }
+
         $store = new member_cv;
         $getdata = $store->get();
         $member_cv = json_decode(json_encode($getdata), true);
 
-        $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
@@ -64,6 +90,22 @@ class Admin_profile_contentController extends Controller
     }
 
     public function infoView(){
+        $username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 3) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        }
+
         $store = new profile_content;
         $getdata = $store->leftjoin('member_cv', 'member_cv_id', '=', 'member_cv.id') 
                         ->select('profile.*', 'member_cv.first_name', 'member_cv.last_name', 'member_cv.email')
@@ -71,7 +113,6 @@ class Admin_profile_contentController extends Controller
                         ->get();
         $profile_content = json_decode(json_encode($getdata), true);
         // var_dump($profile_content);die();
-        $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{
@@ -82,13 +123,28 @@ class Admin_profile_contentController extends Controller
     }
 
     public function editView(){
+        $username = Session::get('username');
+        if($username[0]['permission'] == null) {
+            return Redirect::to('dashboard');
+        }else{
+            $user_permission_session = explode("|", $username[0]['permission']);
+            $check = false;
+            foreach ($user_permission_session as $kpers => $vpers) {
+                if ($vpers == 3) {
+                    $check = true;
+                }
+            };
+            if ($check == false) {
+                return Redirect::to('dashboard');
+            };
+        }
+        
         $store = new profile_content;
         $getdata = $store->leftjoin('member_cv', 'member_cv_id', '=', 'member_cv.id') 
                         ->select('profile.*', 'member_cv.first_name', 'member_cv.last_name', 'member_cv.email')
                         ->where('profile.id',$_GET['id'])->get();
         $profile_content = json_decode(json_encode($getdata), true);
         // var_dump($users);die();
-        $username = Session::get('username');
         if(!isset($username) || $username == ''){
             return Redirect::to('login');
         }else{

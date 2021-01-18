@@ -1,4 +1,5 @@
 <?php
+  // var_dump(Session::get('username'));die();
   if (Session::get('err_add')==true) {
     echo "<script>alert('Email exist!')</script>";
   };
@@ -58,6 +59,21 @@
           <label for="cpass">Confirm Password</label>
           <input type="password"
             class="form-control" name="cpass" id="cpass" aria-describedby="helpId" placeholder="******" required>
+        </div>
+        <div class="form-group">
+          <label>Permission</label>
+          <?php
+            foreach ($permission as $key => $value) {
+          ?>
+          <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" name="permission[]" id="permission" value="<?php echo $value['id']?>" >
+                <?php echo $value['content']?>
+              </label>
+          </div>
+          <?php
+            }
+          ?>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

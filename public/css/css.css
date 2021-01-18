@@ -18,7 +18,7 @@ body{font-family: 'Time New Rome'; letter-spacing: 1px;}
 .index_page .index_page_list .item button:hover img{transform: scale3d(1.1,1.1,1.1);}
 .index_page h3{font-style: italic;font-size: 28px;}
 .index_page_item p{color: #802525;}
-.index_page_item tag {line-height:1.3}
+.index_page_item tag{line-height:1.3}
 
 
 
@@ -71,7 +71,7 @@ figcaption .header_intro p{color: #ccc;text-align: justify;}
 
 
 /* admin_page */
-.table{background-color: #fdfbffbf; overflow-x: scroll; width: 100%; display: block !important;}
+.table{background-color: #fdfbffbf;overflow-x: scroll;width: 100%;/* display: block !important; */}
 /* .icon_admin a{font-size: 16px; width: 30px; height: 30px; margin-right: 10px; background-color: red; color: #fff;} */
 .login_page_view table img{width: 150px;height: 150px;}
 .input_form img{width: 150px; height: 150px;display: block;}
@@ -83,3 +83,4 @@ figcaption .header_intro p{color: #ccc;text-align: justify;}
 .item_dashboard{background-color: #9a9696a3;padding: 50px;text-align: center;color: #fff;}
 .item_dashboard h3{font-size: 23px;}
 .login_page_view h1{text-align: center;}
+.permission_admin{width: 100%;}
