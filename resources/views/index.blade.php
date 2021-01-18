@@ -48,7 +48,6 @@
 								<p>Kiều Tuấn Dũng</p>
 								<p>Dạy bộ môn: Công nghệ web</p>
 								<p>Email: dungkt@tlu.edu.vn</p>
-								<p>Làm việc tại </p>
 							</div>
 						</div>
 					</div>

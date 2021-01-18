@@ -1,4 +1,9 @@
 ::-webkit-scrollbar {
-    width: 0px;
-  }
+  width: 0px;
+}
 @media(min-width:1700px){.container{max-width: 1600px;}}
+@media(max-width:768px){
+.index_page .index_page_list .item button img{height: 300px;}
+.left_place, .left_place::after{border: none;}
+.index_page_item{min-height: 430px !important;}
+} 
