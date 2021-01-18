@@ -96,15 +96,6 @@
               <span>Dashboard</span>
               <span class="badge badge-pill badge-warning">New</span>
             </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="<?php echo URL::to('/dashboard'); ?>">Dashboard 1
-                    <span class="badge badge-pill badge-success">Pro</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
           </li>
           <?php
             if ($check_user == true) {
