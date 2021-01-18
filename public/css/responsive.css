@@ -6,4 +6,5 @@
 .index_page .index_page_list .item button img{height: 300px;}
 .left_place, .left_place::after{border: none;}
 .index_page_item{min-height: 430px !important;}
+.login_view_form{padding: 15px;}
 } 
