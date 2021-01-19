@@ -28,7 +28,7 @@ use App\Http\Controllers\Admin_permissionController;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('public/', [HomeController::class, 'index']);
 Route::post('/show_content_cv_index', [HomeController::class, 'show_content_cv']);
 Route::get('/test', [HomeController::class, 'test']);
 
