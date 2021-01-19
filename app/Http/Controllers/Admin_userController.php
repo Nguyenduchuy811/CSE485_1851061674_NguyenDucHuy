@@ -210,35 +210,74 @@ class Admin_userController extends Controller
 
     public function editAction(Request $request){
         $store = new users; 
-        if (isset($request->permission)) {
-            $permission =implode('|', $request->permission);
-            $arrdata = [
-                'username'=>$request->username,
-                'password'=>$request->pass,
-                'firstname'=>$request->firstname,
-                'lastname'=>$request->lastname,
-                'gender'=>$request->gender,
-                'email'=>$request->email,
-                'phone'=>$request->phone,
-                'address'=>$request->address,
-                'permission' => $permission
-            ];
+        $getdata = $store->where('id',$request->id)->get();
+        $user = json_decode(json_encode($getdata), true);
+        // var_dump();die();
+        if ($user[0]['password'] == $request->pass) {
+            if (isset($request->permission)) {
+                $permission =implode('|', $request->permission);
+                $arrdata = [
+                    'username'=>$request->username,
+                    'password'=>$request->pass,
+                    'firstname'=>$request->firstname,
+                    'lastname'=>$request->lastname,
+                    'gender'=>$request->gender,
+                    'email'=>$request->email,
+                    'phone'=>$request->phone,
+                    'address'=>$request->address,
+                    'permission' => $permission
+                ];
+            }else{
+                $arrdata = [
+                    'username'=>$request->username,
+                    'password'=>$request->pass,
+                    'firstname'=>$request->firstname,
+                    'lastname'=>$request->lastname,
+                    'gender'=>$request->gender,
+                    'email'=>$request->email,
+                    'phone'=>$request->phone,
+                    'address'=>$request->address
+                ];
+            }
         }else{
-            $arrdata = [
-                'username'=>$request->username,
-                'password'=>$request->pass,
-                'firstname'=>$request->firstname,
-                'lastname'=>$request->lastname,
-                'gender'=>$request->gender,
-                'email'=>$request->email,
-                'phone'=>$request->phone,
-                'address'=>$request->address
-            ];
+            if (isset($request->permission)) {
+                $permission =implode('|', $request->permission);
+                $arrdata = [
+                    'username'=>$request->username,
+                    'password'=>password_hash($request->pass, PASSWORD_DEFAULT),
+                    'firstname'=>$request->firstname,
+                    'lastname'=>$request->lastname,
+                    'gender'=>$request->gender,
+                    'email'=>$request->email,
+                    'phone'=>$request->phone,
+                    'address'=>$request->address,
+                    'permission' => $permission
+                ];
+            }else{
+                $arrdata = [
+                    'username'=>$request->username,
+                    'password'=>password_hash($request->pass, PASSWORD_DEFAULT),
+                    'firstname'=>$request->firstname,
+                    'lastname'=>$request->lastname,
+                    'gender'=>$request->gender,
+                    'email'=>$request->email,
+                    'phone'=>$request->phone,
+                    'address'=>$request->address
+                ];
+            }
         }
-        
+        // die();
         
         // dd($store);die();
         $store->where('id',$request->id)->update($arrdata);
+        
+        
+        $user_id_session = Session::get('username');
+        if($user_id_session[0]['id'] == $request->id){
+            $getdata = $store->where('id',$request->id)->get();
+            $user = json_decode(json_encode($getdata), true);
+            Session::put('username', $user);
+        }
         return Redirect::to('/list_user');       
     }
 }
