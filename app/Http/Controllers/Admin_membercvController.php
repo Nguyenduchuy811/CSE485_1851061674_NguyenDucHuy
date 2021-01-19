@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Storage;
 
 class Admin_membercvController extends Controller
 {
-    public function index(){$username = Session::get('username');
+    public function index(){
+        $username = Session::get('username');
         if($username[0]['permission'] == null) {
             return Redirect::to('dashboard');
         }else{
@@ -42,6 +43,7 @@ class Admin_membercvController extends Controller
     }
 
     public function addView(){
+        $username = Session::get('username');
         if($username[0]['permission'] == null) {
             return Redirect::to('dashboard');
         }else{
@@ -98,6 +100,7 @@ class Admin_membercvController extends Controller
     }
 
     public function infoView(){
+        $username = Session::get('username');
         if($username[0]['permission'] == null) {
             return Redirect::to('dashboard');
         }else{
@@ -127,6 +130,7 @@ class Admin_membercvController extends Controller
     }
 
     public function editView(){
+        $username = Session::get('username');
         if($username[0]['permission'] == null) {
             return Redirect::to('dashboard');
         }else{
